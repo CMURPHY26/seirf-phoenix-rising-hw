@@ -20,8 +20,22 @@ body {
     margin: auto;
 }
 
+.projectsContainer{
+    width: 95%;
+    margin: auto;
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, .2);
+    padding-bottom: 5px;
+}
+
  nav > ul > li {
      list-style: none;
+     display: inline;
+     padding: 2em;
+     font-size: 1.25em;
  }
 
  h1 {
@@ -36,6 +50,22 @@ body {
      text-align: center;
  }
 
- .socialLinks h3{
+ .skills h3 {
     color: purple;
+ }
+
+ .projects {
+    border-radius: 20px;
+    padding: 1em;
+    border: 2px solid navy;
+    display: inline-block;
+    margin: 1em 1em 0 0;
+    max-width: 400px;
+    vertical-align: top;
+    min-height: 300px;
+ }
+
+ p {
+    width: 75%;
+    margin: auto;
  }
