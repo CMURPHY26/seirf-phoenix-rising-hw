@@ -13,6 +13,8 @@ body {
     background-image: linear-gradient(black, grey, white);
     background-repeat: no-repeat;
     font-size:1.75em;
+    position: relative;
+    margin: 0 0 4em 0;
 }
 
 .container {
@@ -27,7 +29,7 @@ body {
 }
 
 nav {
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .9);
     padding-bottom: 5px;
 }
 
@@ -36,15 +38,23 @@ nav {
      display: inline;
      padding: 2em;
      font-size: 1.25em;
+     text-transform: uppercase;
+ }
+
+a {
+     text-decoration: none;
+     color rgb(130, 50, 130);:
  }
 
  h1 {
      color: grey;
+     text-transform: uppercase;
  }
 
  img {
      border-radius: 40px;
      max-width: 800px;
+     border: 1px solid black;
  }
  .center {
      text-align: center;
@@ -69,3 +79,31 @@ nav {
     width: 75%;
     margin: auto;
  }
+
+ button.email {
+     position: fixed;
+     bottom: 0;
+     right: 0;
+     padding: 1em;
+     margin: 1em;
+     font-size: .7em;
+     border: 2px solid black;
+     border-radius: 10px;
+     background-color:  rgb(130, 50, 130);
+     color: white;
+ }
+
+ nav {
+     position: fixed;
+     top: 0;
+     width: 100%;
+ }
+
+ .name {
+     margin-top: 7em;
+ }
+
+ button > a {
+     color: white;
+ }
+
