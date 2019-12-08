@@ -1,5 +1,37 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(black, grey, white);
+    background-repeat: no-repeat;
+}
 
 h1 {
-    font-family: 'Roboto Mono', 'Arial', sans-serif;
+    font-size: 3em;
 }
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans Condensed', 'Arial', sans-serif;
+    color: grey;
+}
+ nav > ul > li {
+     list-style: none;
+ }
+
+ img {
+     border-radius: 40px;
+ }
+ .center {
+     text-align: center;
+ }
