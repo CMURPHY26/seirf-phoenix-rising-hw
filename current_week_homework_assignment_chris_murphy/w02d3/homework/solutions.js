@@ -120,37 +120,51 @@
 
 //Digit Sum
 
-const sumDigits = (num) => {
-    // if number is > 9 then it has two digits, else we cannot split
-    if (num > 9){
-        //convert number to string so you can use split method 
-        //to create and array of the split string numbers
-        let stringArray = num.toString().split('');
-        //initialize the numberArray to prepare to fill it with numbers
-        let numberArray = []
-        //loop through each string of the stringArray to convert it 
-        //to a number and push it to the numberArray
-        for (string of stringArray){
-            //convert string to number and store in local number variable
-            let number = Number(string);
-            // console.log(number);
-            //push the looped number to the numberArray
-            numberArray.push(number);
-        }
+// const sumDigits = (num) => {
+//     // if number is > 9 then it has two digits, else we cannot split
+//     if (num > 9){
+//         //convert number to string so you can use split method 
+//         //to create and array of the split string numbers
+//         let stringArray = num.toString().split('');
+//         //initialize the numberArray to prepare to fill it with numbers
+//         let numberArray = []
+//         //loop through each string of the stringArray to convert it 
+//         //to a number and push it to the numberArray
+//         for (string of stringArray){
+//             //convert string to number and store in local number variable
+//             let number = Number(string);
+//             // console.log(number);
+//             //push the looped number to the numberArray
+//             numberArray.push(number);
+//         }
 
-        //initializing the sum variable
-        let sum = 0;
-        // looping through the numbers in the number array and 
-        //and adding each to the sum variable
-        for (number of numberArray) {
-            sum += number;
-        }
-        //returning the sum variable
-        return sum;
+//         //initializing the sum variable
+//         let sum = 0;
+//         // looping through the numbers in the number array and 
+//         //and adding each to the sum variable
+//         for (number of numberArray) {
+//             sum += number;
+//         }
+//         //returning the sum variable
+//         return sum;
         
-    } else {
-        return "The number only has one digit";
-    }
+//     } else {
+//         return "The number only has one digit";
+//     }
+// }
+
+// console.log(sumDigits(189));
+
+
+  //////////////////////
+ ///Pythagoras
+///////////////////////
+
+const calculateSide = (sideA, sideB) => {
+    // a**2 + b**2 = c**2
+    return Math.sqrt((Math.pow(sideA, 2) + Math.pow(sideB, 2)));
 }
 
-console.log(sumDigits(189));
+console.log(calculateSide(3, 4));
+
+
