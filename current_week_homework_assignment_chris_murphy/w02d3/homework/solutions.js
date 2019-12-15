@@ -12,19 +12,35 @@
 // PALINDROME
 ////////////////////////
 
-const checkPalindrome = (string) => {
+// const checkPalindrome = (string) => {
     
-    const reverseString = string.toLowerCase().split("").reverse().join("");
+//     const reverseString = string.toLowerCase().split("").reverse().join("");
 
-    if (string.toLowerCase() === reverseString) {
-        return true;
-    } else {
-        return false;
+//     if (string.toLowerCase() === reverseString) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// console.log(checkPalindrome("Radar"));
+
+// console.log(checkPalindrome("Borscht"));
+
+// console.log(checkPalindrome("SiRacecArS"));
+
+
+ ////////////////////////
+// SUM ARRAY
+////////////////////////
+
+const sumArray = (arr) => {
+    let sum = 0;
+    for (let number of arr) {
+        sum += number;
     }
+    return sum;
+
 }
 
-console.log(checkPalindrome("Radar"));
-
-console.log(checkPalindrome("Borscht"));
-
-console.log(checkPalindrome("SiRacecArS"));
+console.log(sumArray([1, 2, 3, 4, 5, 6]));
