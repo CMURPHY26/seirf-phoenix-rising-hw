@@ -34,13 +34,44 @@
 // SUM ARRAY
 ////////////////////////
 
-const sumArray = (arr) => {
-    let sum = 0;
-    for (let number of arr) {
-        sum += number;
-    }
-    return sum;
+// const sumArray = (arr) => {
+//     let sum = 0;
+//     for (let number of arr) {
+//         sum += number;
+//     }
+//     return sum;
 
+// }
+
+// console.log(sumArray([1, 2, 3, 4, 5, 6]));
+
+
+
+ ////////////////////////
+// PRIME NUMBERS
+////////////////////////
+
+const checkPrime = (num) => {
+    for(let i = 2; i <= Math.sqrt(num); i++) {
+        console.log(i);
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true
+}
+console.log(checkPrime(5)); 
+
+
+const printPrimes = (limit) => {
+    for (i = 1; i <= limit; i++) {
+        if (checkPrime(i)) {
+            console.log(i);
+        }
+    }
+    
 }
 
-console.log(sumArray([1, 2, 3, 4, 5, 6]));
+console.log(printPrimes(97));
+
+
