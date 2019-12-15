@@ -81,34 +81,76 @@
 ////////////////////////
 
 //Array of game moves
-gameMove = ["rock", "paper", "scissors"];
+// gameMove = ["rock", "paper", "scissors"];
 
-const randomMove = () => {
-    //gets a random integer with a max parameter value
-    const getRandomNum = () => {
-        return Math.floor(Math.random() * (gameMove.length));
+// const randomMove = () => {
+//     //gets a random integer with a max parameter value
+//     const getRandomNum = () => {
+//         return Math.floor(Math.random() * (gameMove.length));
+//     }
+//     // returns the random index of the gameMove array 
+//     return gameMove[getRandomNum()];
+// }
+
+// //stores the random move in each of the player variables
+// let computersMove = randomMove();
+// let playersMove = randomMove();
+
+// //function to play the game
+// const rockPaperScissors = (computersMove, playersMove) => {
+//     //consoles the player & computer moves
+//     console.log(`computer chose ${computersMove}`);
+//     console.log(`player chose ${playersMove}`);
+//     //conditional 
+//     if (computersMove === playersMove) {
+//         console.log(`${computersMove} ties ${playersMove}, try again!`)
+//     } else if (computersMove === "rock" && playersMove === "scissors"|| computersMove === "paper" && playersMove === "rock" || computersMove === "scissors" && playersMove === "paper"){    
+//         console.log(`${computersMove} beats ${playersMove}, computer wins!`);
+//     } else if(playersMove === "rock" && computersMove === "scissors"|| playersMove === "paper" && computersMove === "rock" || playersMove === "scissors" && computersMove === "paper"){    
+//         console.log(`${playersMove} beats ${computersMove}, players wins!`);
+//     }
+// }
+
+// rockPaperScissors(computersMove, playersMove);
+
+
+  //////////////////////
+ ///Hungry for More?
+///////////////////////
+
+//Digit Sum
+
+const sumDigits = (num) => {
+    // if number is > 9 then it has two digits, else we cannot split
+    if (num > 9){
+        //convert number to string so you can use split method 
+        //to create and array of the split string numbers
+        let stringArray = num.toString().split('');
+        //initialize the numberArray to prepare to fill it with numbers
+        let numberArray = []
+        //loop through each string of the stringArray to convert it 
+        //to a number and push it to the numberArray
+        for (string of stringArray){
+            //convert string to number and store in local number variable
+            let number = Number(string);
+            // console.log(number);
+            //push the looped number to the numberArray
+            numberArray.push(number);
+        }
+
+        //initializing the sum variable
+        let sum = 0;
+        // looping through the numbers in the number array and 
+        //and adding each to the sum variable
+        for (number of numberArray) {
+            sum += number;
+        }
+        //returning the sum variable
+        return sum;
+        
+    } else {
+        return "The number only has one digit";
     }
-    // returns the random index of the gameMove array 
-    return gameMove[getRandomNum()];
 }
 
-//stores the random move in each of the player variables
-let computersMove = randomMove();
-let playersMove = randomMove();
-
-//function to play the game
-const rockPaperScissors = (computersMove, playersMove) => {
-    //consoles the player & computer moves
-    console.log(`computer chose ${computersMove}`);
-    console.log(`player chose ${playersMove}`);
-    //conditional 
-    if (computersMove === playersMove) {
-        console.log(`${computersMove} ties ${playersMove}, try again!`)
-    } else if (computersMove === "rock" && playersMove === "scissors"|| computersMove === "paper" && playersMove === "rock" || computersMove === "scissors" && playersMove === "paper"){    
-        console.log(`${computersMove} beats ${playersMove}, computer wins!`);
-    } else if(playersMove === "rock" && computersMove === "scissors"|| playersMove === "paper" && computersMove === "rock" || playersMove === "scissors" && computersMove === "paper"){    
-        console.log(`${playersMove} beats ${computersMove}, players wins!`);
-    }
-}
-
-rockPaperScissors(computersMove, playersMove);
+console.log(sumDigits(189));
