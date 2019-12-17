@@ -1,0 +1,169 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#menu-icon {
+    width: 3%;
+    display: inline;
+    padding: 10px;
+    margin-right: 5%;
+    border: 1px solid rgb(179, 178, 178);
+    border-radius: 5%;
+    float: right;
+}
+
+.fixed-header {
+    margin-top: 2%;
+    /* overflow: auto; */
+}
+
+.header-links.login a {
+    color: black;
+}
+
+.logo {
+    float: left;
+}
+
+.banner {
+    padding-top: 1%;
+}
+
+.header-right > div {
+    display: inline-block;
+    float: right;
+    padding-right: 5%;
+    font-size: 1.5em;
+    color: grey;
+} 
+
+.banner > img {
+    width: 100%;
+}
+
+.header-right a {
+    text-decoration: none;
+    color: grey;
+}
+
+.header-links {
+    padding-top: 1em;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid rgb(176, 176, 176);
+    border-radius: 2%;
+    margin: 3% 2%;
+    max-width: 338px;
+    max-height: 400px;
+    float: left;
+    padding-top: 2%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.card img {
+    position: relative;
+    top: -110px;
+    z-index: -1;
+}
+
+.banner {
+    clear:both;
+    padding-top: 2%;
+}
+
+h3 {
+    font-weight: 100;
+    color: grey;
+}
+
+.card p {
+    font-weight: 500;
+    font-size: 1.30em; 
+    margin: 1em 3em;
+    line-height: 1.5em;
+}
+
+.card button {
+    padding: .7em 2em;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 1em;
+    color: grey;
+}
+
+section {
+    text-align: center;
+    margin: 10%;
+    font-size: 1.5em;
+}
+
+section h3 {
+    font-weight: 100;
+}
+
+section h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+}
+
+section button {
+    padding: 3% 15%;
+    margin-top: 2%;
+    margin-left: 20px;
+    background-color: white;
+    font-size: 1em;
+    color: #0B43DB;
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+.foryou {
+    background-color: #0B43DB;
+    color: white;
+}
+
+hr {
+    color: rgb(176, 176, 176);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    padding-bottom: 1em;
+    font-size: 1.25em;
+    font-weight: 100;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: rgb(176, 176, 176);
+}
+
+
+.footer-column {
+    float: left;
+    padding-left: 10%;
+    padding-top: 1em;
+}
+
