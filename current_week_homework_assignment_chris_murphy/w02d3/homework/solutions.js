@@ -12,22 +12,22 @@
 // PALINDROME
 ////////////////////////
 
-// const checkPalindrome = (string) => {
+const checkPalindrome = (string) => {
     
-//     const reverseString = string.toLowerCase().split("").reverse().join("");
+    const reverseString = string.toLowerCase().split("").reverse().join("");
 
-//     if (string.toLowerCase() === reverseString) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
+    if (string.toLowerCase() === reverseString) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-// console.log(checkPalindrome("Radar"));
+console.log(checkPalindrome("Radar"));
 
-// console.log(checkPalindrome("Borscht"));
+console.log(checkPalindrome("Borscht"));
 
-// console.log(checkPalindrome("SiRacecArS"));
+console.log(checkPalindrome("SiRacecArS"));
 
 
  ////////////////////////
@@ -51,28 +51,28 @@
 // PRIME NUMBERS
 ////////////////////////
 
-// const checkPrime = (num) => {
-//     for(let i = 2; i <= Math.sqrt(num); i++) {
-//         console.log(i);
-//         if (num % i === 0) {
-//             return false;
-//         }
-//     }
-//     return true
-// }
-// console.log(checkPrime(5)); 
+const checkPrime = (num) => {
+    for(let i = 2; i <= Math.sqrt(num); i++) {
+        console.log(i);
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true
+}
+console.log(checkPrime(5)); 
 
 
-// const printPrimes = (limit) => {
-//     for (i = 1; i <= limit; i++) {
-//         if (checkPrime(i)) {
-//             console.log(i);
-//         }
-//     }
+const printPrimes = (limit) => {
+    for (i = 1; i <= limit; i++) {
+        if (checkPrime(i)) {
+            console.log(i);
+        }
+    }
     
-// }
+}
 
-// console.log(printPrimes(97));
+console.log(printPrimes(97));
 
 
 
@@ -81,37 +81,40 @@
 ////////////////////////
 
 //Array of game moves
-// gameMove = ["rock", "paper", "scissors"];
+gameMove = ["rock", "paper", "scissors"];
 
-// const randomMove = () => {
-//     //gets a random integer with a max parameter value
-//     const getRandomNum = () => {
-//         return Math.floor(Math.random() * (gameMove.length));
-//     }
-//     // returns the random index of the gameMove array 
-//     return gameMove[getRandomNum()];
-// }
+const randomMove = () => {
+    //gets a random integer with a max parameter value
+    const getRandomNum = () => {
+        return Math.floor(Math.random() * (gameMove.length));
+    }
+    // returns the random index of the gameMove array 
+    return gameMove[getRandomNum()];
+}
 
 // //stores the random move in each of the player variables
-// let computersMove = randomMove();
-// let playersMove = randomMove();
+let computersMove = randomMove();
+let playersMove = "paper";
 
-// //function to play the game
-// const rockPaperScissors = (computersMove, playersMove) => {
-//     //consoles the player & computer moves
-//     console.log(`computer chose ${computersMove}`);
-//     console.log(`player chose ${playersMove}`);
-//     //conditional 
-//     if (computersMove === playersMove) {
-//         console.log(`${computersMove} ties ${playersMove}, try again!`)
-//     } else if (computersMove === "rock" && playersMove === "scissors"|| computersMove === "paper" && playersMove === "rock" || computersMove === "scissors" && playersMove === "paper"){    
-//         console.log(`${computersMove} beats ${playersMove}, computer wins!`);
-//     } else if(playersMove === "rock" && computersMove === "scissors"|| playersMove === "paper" && computersMove === "rock" || playersMove === "scissors" && computersMove === "paper"){    
-//         console.log(`${playersMove} beats ${computersMove}, players wins!`);
-//     }
-// }
+//let playersMove = add player move in code above change randomMove(); 
+// wrap move in quotes like "rock"; "paper"; "scissors"
 
-// rockPaperScissors(computersMove, playersMove);
+//function to play the game
+const rockPaperScissors = (computersMove, playersMove) => {
+    //consoles the player & computer moves
+    console.log(`computer chose ${computersMove}`);
+    console.log(`player chose ${playersMove}`);
+    //conditional 
+    if (computersMove === playersMove) {
+        console.log(`${computersMove} ties ${playersMove}, try again!`)
+    } else if (computersMove === "rock" && playersMove === "scissors"|| computersMove === "paper" && playersMove === "rock" || computersMove === "scissors" && playersMove === "paper"){    
+        console.log(`${computersMove} beats ${playersMove}, computer wins!`);
+    } else if(playersMove === "rock" && computersMove === "scissors"|| playersMove === "paper" && computersMove === "rock" || playersMove === "scissors" && computersMove === "paper"){    
+        console.log(`${playersMove} beats ${computersMove}, players wins!`);
+    }
+}
+
+rockPaperScissors(computersMove, playersMove);
 
 
   //////////////////////
@@ -160,11 +163,11 @@
  ///Pythagoras
 ///////////////////////
 
-const calculateSide = (sideA, sideB) => {
-    // a**2 + b**2 = c**2
-    return Math.sqrt((Math.pow(sideA, 2) + Math.pow(sideB, 2)));
-}
+// const calculateSide = (sideA, sideB) => {
+//     // a**2 + b**2 = c**2
+//     return Math.sqrt((Math.pow(sideA, 2) + Math.pow(sideB, 2)));
+// }
 
-console.log(calculateSide(3, 4));
+// console.log(calculateSide(3, 4));
 
 
