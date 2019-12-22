@@ -1,3 +1,9 @@
+
+  //////////////////////////
+ ////Datatypes Refresher
+//////////////////////////
+
+
 // For each of the following, write which datatypes you would use to represent the data, and then give a small example of the data structure:
 
 // e.g. A computer that can be either on or off. 
@@ -48,3 +54,27 @@
 //         }
 //     ]
 // }; 
+
+
+  //////////////////////////
+ ////Take it Easy
+//////////////////////////
+
+
+// Make an array that holds all of the colors of the rainbow.
+
+const colorsOfRainbow = ["red", "orange", "yellow", "green", "blue", "indigo",  "violet"];
+
+// Write code that will access "blue" from the rainbow array.
+console.log(colorsOfRainbow[4]);
+// Make an object that is called your name and holds the information about your favorite food, a hobby, the name of the town that you live in currently, and your favorite datatype.
+
+const chrisMurphy = {
+    favoriteFood: "Pizza",
+    hobby: "Playing Guitar",
+    town: "Huntington",
+    favoriteDataType: "object"
+};
+
+// Write code that will access your hobby from the object that you just created.
+console.log(chrisMurphy.hobby);
