@@ -7,11 +7,23 @@
     <title>Landscaper Tycoon Game</title>
 </head>
 <body>
-    <h1>Landscaper Tycoon</h1>
+    <header><h1>Landscaper Tycoon</h1></header>
+    <main>
+        <button class="cutLawn" onclick="cutLawn();">Cut Lawn</button>
+        <button class="buyTool" onclick="buyTool();">Buy Tool</button>
+        <button class="resetGame" onclick="resetGame();">Reset Game</button>
+        <h3>Tools</h3>
+        <li>teeth: free</li>
+        <li>pair of rusty scissors: $5</li>
+        <li>old-timey push lawnmower: $25</li>
+        <li>fancy battery-powered lawnmower: $250</li>
+        <li>team of starving students: $500</li>
 
-    
+        <h3 id="money"></h3>
+        <h3 id="tool"></h3>
 
-
+    </main>
+    <footer></footer>
     <script src="app.js"></script>
 </body>
 </html>

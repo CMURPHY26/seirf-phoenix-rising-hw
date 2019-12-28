@@ -204,7 +204,7 @@ const bondFilms = [
 
 const bondTitles = [];
 
-for(object of bondFilms) {
+for(let object of bondFilms) {
     bondTitles.push(object.title); 
 }
 
@@ -214,7 +214,7 @@ console.log(bondTitles);
 
 const oddBonds = [];
 
-for(object of bondFilms) {
+for(let object of bondFilms) {
     if(object.year % 2 != 0) {
         console.log(object.title);
     }
@@ -224,7 +224,7 @@ for(object of bondFilms) {
 
 let cumulativeGrossOfBondFilms = 0;
 
-for(object of bondFilms) {
+for(let object of bondFilms) {
     let gross = object.gross;
     let grossNumber = Number(gross.substring(1,gross.length).replace(/,/g, ""));
     // console.log(grossNumber);
@@ -232,3 +232,17 @@ for(object of bondFilms) {
 }
 
 console.log(`The cumulative gross of the Bond franchise is: $${cumulativeGrossOfBondFilms}`);
+
+
+  //////////////////////////
+ ////Hungry for More?
+//////////////////////////
+
+let arrBondActorObjects = [];
+
+for(let object of bondFilms) {
+  console.log(object['actor']);
+  arrBondActorObjects.push(object['actor']);
+}
+
+console.log(arrBondActorObjects);
