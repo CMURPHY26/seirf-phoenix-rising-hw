@@ -1,6 +1,9 @@
 console.log("It's working!");
 
+
+//toolArray array container for tool objects
 const toolArray = [
+    //tool object with type, income and cost keys
     {type: "teeth", income: 1, cost: 0},
     {type: "pair of rusty scissors", income: 5, cost: 5},
     {type: "old-timey push lawnmower", income: 50, cost: 25},
@@ -8,15 +11,30 @@ const toolArray = [
     {type: "team of starving students", income: 250, cost: 500},
 ]
 
+//landscaperBusiness object that holds and updates the game state
 const landscaperBusiness = {
     tool: "teeth",
     money: 0
 }
 
+//start the game with an alert that notifies the user that they started a 
+//business, current tool and the current money in the bank.
+
+const startAlert = () => {
+    alert(`You have started a landscaping business and your current tool is ${landscaperBusiness.tool} and you have $${landscaperBusiness.money} in the bank.`)
+}
+
+startAlert();
+
+//updates the page with the current tool listed.
 document.querySelector('#tool').innerHTML = `Current Tool: ${landscaperBusiness.tool}`;
 
 // document.querySelector('#money').innerHTML = `Bank Account: $${landscaperBusiness.money}`;
 
+//function addMoney use switch statement that checks the current tool 
+//in the landscaper object and depending on the tool, adds that tool's income
+// to the money key in the landscaperBusiness object
+//to be used on a click event on a cut lawn button
 const addMoney = () => {
     switch(landscaperBusiness.tool) {
         case "teeth":
@@ -40,7 +58,13 @@ const addMoney = () => {
 }
 
 
-
+//function buyTool prompts user asking which tool to buy and then depending
+// on the tool requested, the switch statement checks first if the money
+//available in the landscaperBusiness object is greater than or equal to the 
+//cost of the tool. If it is then subtract the cost of the tool from the 
+//landscaperBusiness object money key and update the tool in the object, 
+//else alert user that they do not have enough money
+//to be used on a buy tool button with a click event
 const buyTool = () => {
     let toolRequested = prompt("Which tool do you want to buy?");
     switch(toolRequested) {
@@ -83,47 +107,36 @@ const buyTool = () => {
         default:
             landscaperBusiness.money -= 0;
     }
-
+//after tool is purchased update bank account and current tool on screen
     document.querySelector('#money').innerHTML = `Bank Account: $${landscaperBusiness.money}`;
     document.querySelector('#tool').innerHTML = `Current Tool: ${landscaperBusiness.tool}`;
 
 }
 
 
-const startAlert = () => {
-    alert(`You have started a landscaping business and your current tool is ${landscaperBusiness.tool} and you have $${landscaperBusiness.money} in the bank.`)
-}
-
-startAlert();
-
-//////ORIGINAL cutLawn function
-//////////////////////////
-// const cutLawn = () => {
-//     while (landscaperBusiness.money >= 0 && landscaperBusiness.money < 1000){
-//         let doWork = prompt("Do you want to cut the lawn to earn money?");
-//         if (doWork === "yes") {
-//             addMoney();
-//             document.querySelector('#money').innerHTML = `Bank Account: $${landscaperBusiness.money}`;
-//             // alert(`Your bank account now has $${landscaperBusiness.money}`)
-//         } else {
-//             return 
-//         }
-//     }
-// }
-
-// cutLawn();
-
+//cut lawn function checks if the money in the object is greater than or equal
+// to 0 and it is less than 1000, call addMoney function that adds money 
+// depending on the tool selected and updates bank account and checks if the money is greater than or equal to 1000 then add congrats message
 const cutLawn = () => {
-        if(landscaperBusiness.money >= 0 && landscaperBusiness.money < 1000){
+        if(landscaperBusiness.money >= 0 && landscaperBusiness.money < 10){
             addMoney();
             document.querySelector('#money').innerHTML = `Bank Account: $${landscaperBusiness.money}`;
+            if(landscaperBusiness.money >= 10) {
+                document.querySelector("#congrats").innerHTML = "<h3>Congratulations! You have won the game!!";
+            }
+    } else {
+        return;
     }
 }
 
 
 
 
+
+// linked to a click event on a button to reset the game to original landscaperBusiness object start state
+
 const resetGame = () => {
+    document.querySelector("#congrats").innerHTML = ""
     landscaperBusiness.money = 0;
     document.querySelector('#money').innerHTML = `Bank Account: $${landscaperBusiness.money}`;
     landscaperBusiness.tool = "teeth";
@@ -131,12 +144,17 @@ const resetGame = () => {
 };
 
 
-const gameWin = () => {
-    if(landscaperBusiness.money >= 1000 && landscaperBusiness.tool === "team of starving students") {
-        alert("Congratulations!! You have won the game!");
-        resetGame();
-    }
-};
 
 
-gameWin();
+
+
+// const gameWin = () => {
+//     if(landscaperBusiness.money >= 10 && landscaperBusiness.tool === "team of starving students") {
+//         console.log('you won!');
+//         alert("Congratulations!! You have won the game!");
+//         resetGame();
+//     }
+// };
+
+
+// gameWin();
