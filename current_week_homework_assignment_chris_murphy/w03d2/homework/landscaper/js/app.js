@@ -118,10 +118,10 @@ const buyTool = () => {
 // to 0 and it is less than 1000, call addMoney function that adds money 
 // depending on the tool selected and updates bank account and checks if the money is greater than or equal to 1000 then add congrats message
 const cutLawn = () => {
-        if(landscaperBusiness.money >= 0 && landscaperBusiness.money < 10){
+        if(landscaperBusiness.money >= 0 && landscaperBusiness.money < 1000){
             addMoney();
             document.querySelector('#money').innerHTML = `Bank Account: $${landscaperBusiness.money}`;
-            if(landscaperBusiness.money >= 10) {
+            if(landscaperBusiness.money >= 1000) {
                 document.querySelector("#congrats").innerHTML = "<h3>Congratulations! You have won the game!!";
             }
     } else {

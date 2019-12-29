@@ -1,0 +1,65 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("https://www.caribbeanlawn.com/images/themegraphics/1550855930content_bar_4_background1.jpg");
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-color: black;
+    background-size: cover
+    
+}
+
+button {
+    background: #000000;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.25em;
+    box-shadow: 2px 4px rgba(255,255,255, 0.468);
+}
+
+h1, h2, h3 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+header {
+    background-color: rgba(128, 128, 128, 0.591);
+    margin: auto;
+    padding: 1.5em;
+    overflow: auto;
+}
+
+main {
+    margin-left: 5%;
+}
+
+.gameButtons, .toolButtons {
+    margin-top: 5%;
+}
+
+.gameButtons button, .toolButtons button{
+    margin-left: 2%;
+}
+
+.messages {
+    float: right;
+}
+
+header h1 {
+    color: black;
+}
+
+.gameTitle {
+    float: left;
+    width: 50%;
+}
+
