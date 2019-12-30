@@ -9,20 +9,20 @@ const toolArray = [
     {type: "old-timey push lawnmower", income: 50, cost: 25},
     {type: "fancy battery-powered lawnmower", income: 100, cost: 250},
     {type: "team of starving students", income: 250, cost: 500},
-]
+];
 
 //landscaperBusiness object that holds and updates the game state
 const landscaperBusiness = {
     tool: "teeth",
     money: 0
-}
+};
 
 //start the game with an alert that notifies the user that they started a 
 //business, current tool and the current money in the bank.
 
 const startAlert = () => {
     alert(`You have started a landscaping business and your current tool is ${landscaperBusiness.tool} and you have $${landscaperBusiness.money} in the bank.`)
-}
+};
 
 startAlert();
 
@@ -55,9 +55,20 @@ const addMoney = () => {
         default:
             landscaperBusiness.money += 0;
     }
-}
+};
 
 
+const updateBankAccount = () => {
+    document.querySelector('#money').innerHTML = `Bank Account: $${landscaperBusiness.money}`;
+};
+
+const updateCurrentTool = () => {
+    document.querySelector('#tool').innerHTML = `Current Tool: ${landscaperBusiness.tool}`;
+};
+
+
+
+///Original Buy Tool Prompt and switch statement
 //function buyTool prompts user asking which tool to buy and then depending
 // on the tool requested, the switch statement checks first if the money
 //available in the landscaperBusiness object is greater than or equal to the 
@@ -65,69 +76,128 @@ const addMoney = () => {
 //landscaperBusiness object money key and update the tool in the object, 
 //else alert user that they do not have enough money
 //to be used on a buy tool button with a click event
-const buyTool = () => {
-    let toolRequested = prompt("Which tool do you want to buy?");
-    switch(toolRequested) {
-        case "teeth":
-            landscaperBusiness.money -= toolArray[0].cost;
-            landscaperBusiness.tool = toolArray[0].type;
-            break;
-        case "pair of rusty scissors":
-            if(landscaperBusiness.money >= 5) {
+// const buyTool = () => {
+//     // alert("Select which tool you want to buy");
+//     let toolRequested = prompt("Which tool do you want to buy?");
+
+//     switch(toolRequested) {
+//         case "teeth":
+//             landscaperBusiness.money -= toolArray[0].cost;
+//             landscaperBusiness.tool = toolArray[0].type;
+//             break;
+//         case "pair of rusty scissors":
+//             if(landscaperBusiness.money >= 5) {
+//             landscaperBusiness.money -= toolArray[1].cost;
+//             landscaperBusiness.tool = toolArray[1].type;
+//             } else {
+//                 alert("You do not have enough money in your bank account! Keep Cutting!!!")
+//             }
+//             break;
+//         case "old-timey push lawnmower":
+//             if(landscaperBusiness.money >= 25) {
+//             landscaperBusiness.money -= toolArray[2].cost;
+//             landscaperBusiness.tool = toolArray[2].type;
+//             } else {
+//                 alert("You do not have enough money in your bank account! Keep Cutting!!!")
+//             }
+//             break;
+//         case "fancy battery-powered lawnmower":
+//             if(landscaperBusiness.money >= 250) {
+//             landscaperBusiness.money -= toolArray[3].cost;
+//             landscaperBusiness.tool = toolArray[3].type;
+//             } else {
+//                 alert("You do not have enough money in your bank account! Keep Cutting!!!")
+//             }   
+//             break;
+//         case "team of starving students":
+//             if(landscaperBusiness.money >= 500) {
+//             landscaperBusiness.money -= toolArray[4].cost;
+//             landscaperBusiness.tool = toolArray[4].type;
+//             } else {
+//                 alert("You do not have enough money in your bank account! Keep Cutting!!!")
+//             }       
+//             break;
+//         default:
+//             landscaperBusiness.money -= 0;
+//     }
+// //after tool is purchased update bank account and current tool on screen
+//     document.querySelector('#money').innerHTML = `Bank Account: $${landscaperBusiness.money}`;
+//     document.querySelector('#tool').innerHTML = `Current Tool: ${landscaperBusiness.tool}`;
+
+// }
+
+const lowBalanceAlert = () => {
+    alert("You do not have enough money in your bank account! Keep Cutting!!!");
+};
+
+const buyTeeth = () => {
+    landscaperBusiness.money -= toolArray[0].cost;
+    landscaperBusiness.tool = toolArray[0].type;
+    updateBankAccount();
+    updateCurrentTool();
+};
+
+const buyScissors = () => {
+    if(landscaperBusiness.money >= 5) {
             landscaperBusiness.money -= toolArray[1].cost;
             landscaperBusiness.tool = toolArray[1].type;
-            } else {
-                alert("You do not have enough money in your bank account! Keep Cutting!!!")
-            }
-            break;
-        case "old-timey push lawnmower":
-            if(landscaperBusiness.money >= 25) {
-            landscaperBusiness.money -= toolArray[2].cost;
-            landscaperBusiness.tool = toolArray[2].type;
-            } else {
-                alert("You do not have enough money in your bank account! Keep Cutting!!!")
-            }
-            break;
-        case "fancy battery-powered lawnmower":
-            if(landscaperBusiness.money >= 250) {
-            landscaperBusiness.money -= toolArray[3].cost;
-            landscaperBusiness.tool = toolArray[3].type;
-            } else {
-                alert("You do not have enough money in your bank account! Keep Cutting!!!")
-            }   
-            break;
-        case "team of starving students":
-            if(landscaperBusiness.money >= 500) {
-            landscaperBusiness.money -= toolArray[4].cost;
-            landscaperBusiness.tool = toolArray[4].type;
-            } else {
-                alert("You do not have enough money in your bank account! Keep Cutting!!!")
-            }       
-            break;
-        default:
-            landscaperBusiness.money -= 0;
-    }
-//after tool is purchased update bank account and current tool on screen
-    document.querySelector('#money').innerHTML = `Bank Account: $${landscaperBusiness.money}`;
-    document.querySelector('#tool').innerHTML = `Current Tool: ${landscaperBusiness.tool}`;
+        } else {
+            lowBalanceAlert();
+        }
+        updateBankAccount();
+        updateCurrentTool();
+};
 
-}
+const buyPushMower = () => {
+    if(landscaperBusiness.money >= 25) {
+        landscaperBusiness.money -= toolArray[2].cost;
+        landscaperBusiness.tool = toolArray[2].type;
+        } else {
+            lowBalanceAlert();
+        }
+    updateBankAccount();
+    updateCurrentTool();
+};
+
+const buyBatteryMower = () => {
+    if(landscaperBusiness.money >= 250) {
+        landscaperBusiness.money -= toolArray[3].cost;
+        landscaperBusiness.tool = toolArray[3].type;
+        } else {
+            lowBalanceAlert();
+        }
+    updateBankAccount();
+    updateCurrentTool();
+};
+
+const students = () => {
+    if(landscaperBusiness.money >= 500) {
+        landscaperBusiness.money -= toolArray[4].cost;
+        landscaperBusiness.tool = toolArray[4].type;
+        } else {
+            lowBalanceAlert();
+        }
+    updateBankAccount();
+    updateCurrentTool();
+};
+
+
 
 
 //cut lawn function checks if the money in the object is greater than or equal
 // to 0 and it is less than 1000, call addMoney function that adds money 
 // depending on the tool selected and updates bank account and checks if the money is greater than or equal to 1000 then add congrats message
 const cutLawn = () => {
-        if(landscaperBusiness.money >= 0 && landscaperBusiness.money < 1000){
+    if(landscaperBusiness.money >= 0 && landscaperBusiness.money < 1000){
             addMoney();
-            document.querySelector('#money').innerHTML = `Bank Account: $${landscaperBusiness.money}`;
+            updateBankAccount();
             if(landscaperBusiness.money >= 1000) {
                 document.querySelector("#congrats").innerHTML = "<h3>Congratulations! You have won the game!!";
             }
     } else {
         return;
     }
-}
+};
 
 
 

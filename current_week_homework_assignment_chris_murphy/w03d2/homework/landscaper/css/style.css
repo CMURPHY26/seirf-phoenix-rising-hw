@@ -28,7 +28,6 @@ h1, h2, h3 {
     color: white;
     font-size: 2rem;
     margin: 0;
-    padding-bottom: 10px;
 }
 
 header {
@@ -48,18 +47,37 @@ main {
 
 .gameButtons button, .toolButtons button{
     margin-left: 2%;
+    margin-bottom: 5%;
 }
 
 .messages {
     float: right;
 }
 
-header h1 {
+/* header h1 {
     color: black;
-}
+} */
 
 .gameTitle {
     float: left;
     width: 50%;
 }
 
+.actionTitle {
+    padding: 1%;
+    margin-bottom: 2%;
+    max-width: 8rem;
+    text-align: center;
+    vertical-align: middle;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.buyTitle {
+    padding: 1%;
+    margin-bottom: 2%;
+    max-width: 10rem;
+    text-align: center;
+    background-color: black;
+    border-radius: 10px;
+}
