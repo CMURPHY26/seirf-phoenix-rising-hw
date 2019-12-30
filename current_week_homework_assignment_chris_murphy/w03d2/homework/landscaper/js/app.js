@@ -193,6 +193,7 @@ const cutLawn = () => {
             updateBankAccount();
             if(landscaperBusiness.money >= 1000) {
                 document.querySelector("#congrats").innerHTML = "<h3>Congratulations! You have won the game!!";
+                setTimeout(resetGame, 5000);
             }
     } else {
         return;

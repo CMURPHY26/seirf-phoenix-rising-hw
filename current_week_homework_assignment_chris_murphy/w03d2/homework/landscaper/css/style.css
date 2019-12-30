@@ -19,7 +19,6 @@ button {
     background: #000000;
     color: white;
     padding: 10px;
-    border-radius: 20px;
     font-size: 1.25em;
     box-shadow: 2px 4px rgba(255,255,255, 0.468);
 }
@@ -48,19 +47,25 @@ main {
 .gameButtons button, .toolButtons button{
     margin-left: 2%;
     margin-bottom: 5%;
+    padding: 10px;
 }
 
 .messages {
     float: right;
+    margin-right: 5%;
+    border: 2px solid white;
+    background: rgba(57, 57, 57, 0.468);
+    padding: 1em;
 }
 
-/* header h1 {
-    color: black;
-} */
 
 .gameTitle {
     float: left;
-    width: 50%;
+    width: 17%;
+    background-color: black;
+    border: 1px solid white;
+    text-align: center;
+    padding: 5px;
 }
 
 .actionTitle {
@@ -70,7 +75,7 @@ main {
     text-align: center;
     vertical-align: middle;
     background-color: black;
-    border-radius: 10px;
+    border: 2px solid white;
 }
 
 .buyTitle {
@@ -79,5 +84,5 @@ main {
     max-width: 10rem;
     text-align: center;
     background-color: black;
-    border-radius: 10px;
+    border: 2px solid white;
 }
