@@ -15,6 +15,8 @@ body {
     
 }
 
+
+
 button {
     background: #000000;
     color: white;
@@ -63,7 +65,7 @@ main {
     float: left;
     width: 17%;
     background-color: black;
-    border: 1px solid white;
+    border: 2px solid white;
     text-align: center;
     padding: 5px;
 }
@@ -86,3 +88,51 @@ main {
     background-color: black;
     border: 2px solid white;
 }
+
+
+
+  
+
+@media screen and (max-width: 375px) {
+    body {
+        font-size: .75rem;
+    }
+
+    h2, h3 {
+        color: white;
+        font-size: 1rem;
+        margin: 0;
+    }
+    div.gameTitle {
+        margin: auto;
+        width: 75%;
+        background-color: black;
+        border: 2px solid white;
+        text-align: center;
+        padding: 5px;
+    }
+    .actionTitle {
+        clear: both;
+    }
+    .messages {
+        margin-bottom: 50px;
+        font-size: 1rem;
+    }
+  }
+
+@media screen and (max-width: 768px) {
+    .gameTitle {
+        float: left;
+        width: 50%;
+        background-color: black;
+        border: 2px solid white;
+        text-align: center;
+        padding: 5px;
+    }
+    .actionTitle {
+        clear: both;
+    }
+    .messages {
+        margin-bottom: 50px;;
+    }
+  }
