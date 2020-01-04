@@ -122,9 +122,6 @@ const students = () => {
     updateCurrentTool();
 };
 
-
-
-
 //cut lawn function checks if the money in the object is greater than or equal
 // to 0 and it is less than 1000, call addMoney function that adds money 
 // depending on the tool selected and updates bank account and checks if the money is greater than or equal to 1000 then add congrats message
@@ -141,10 +138,6 @@ const cutLawn = () => {
     }
 };
 
-
-
-
-
 // linked to a click event on a button to reset the game to original landscaperBusiness object start state
 
 const resetGame = () => {
@@ -154,6 +147,3 @@ const resetGame = () => {
     landscaperBusiness.tool = "teeth";
     document.querySelector('#tool').innerHTML = `Current Tool: ${landscaperBusiness.tool}`;
 };
-
-
-
