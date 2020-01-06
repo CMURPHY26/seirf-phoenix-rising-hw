@@ -90,3 +90,56 @@ console.log(nums.some( num => num % 7 === 0 ));
 
 // Find out if some words have the letter a in them
 console.log(panagrams.some( word => word.includes("a") ));
+
+
+
+// Hungry for More
+// Reduce
+// Add all the numbers in the array together using the reduce method
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+console.log(nums.reduce(reducer));
+// concatenate all the words using reduce
+const wordReducer = (accumulator, currentValue) => `${accumulator} ${currentValue}`;// added string literal to add spaces between words
+console.log(panagrams.reduce(wordReducer));
+
+// Thought Questions
+
+// What happened to the original array?
+// Sort
+// Try to sort without any arguments, do you get what you'd expect with the numbers array?
+const sortedNumsArray = nums.sort();
+console.log(sortedNumsArray);
+// Try to sort without any arguments, do you get what you'd expect with the words array?
+const sortedWordsArray = panagrams.sort();
+console.log(sortedWordsArray);
+// Sort the numbers in ascending order
+const sortedAscending = nums.sort( (a,b) => a - b);
+console.log(sortedAscending);
+// Sort the numbers in descending order
+const descendingSort = nums.sort( (a,b) => b - a);
+console.log(descendingSort);
+// Sort the words in ascending order
+const wordAscending = panagrams.sort( (a,b) => {
+      if( a < b ) {
+        return -1;
+      } 
+      if ( a > b) {
+        return 1;
+      }
+      return 0;
+    });
+    console.log(wordAscending);
+// Sort the words in descending order
+const wordDescending = panagrams.sort( (a, b) => {
+      if(a > b) {
+        return -1;
+      }
+      if(a < b) {
+        return 1;
+      }
+      return 0;
+    });
+    console.log(wordDescending);
+// Thought Questions
+
+// What happened to the original array?
