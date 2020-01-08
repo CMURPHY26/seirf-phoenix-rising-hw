@@ -61,7 +61,20 @@ nav > li > a {
     text-decoration: none;
 }
 
+.call-to-action {
+    font-size: 2.7em;
+    font-weight: 200;
+    width: 70%;
+    margin: 2em auto;
+    line-height: 1.75em;
+    letter-spacing: .05em;
+    font-family: Helvetica, sans-serif;
+}
 
+.break {
+    width: 90%;
+    color: grey;
+}
 
 
 
