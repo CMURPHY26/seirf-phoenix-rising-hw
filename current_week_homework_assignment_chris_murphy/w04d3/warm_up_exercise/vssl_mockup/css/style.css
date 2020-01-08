@@ -73,8 +73,103 @@ nav > li > a {
 
 .break {
     width: 90%;
-    color: grey;
+    border: 1px solid rgb(233, 233, 233);
+}
+
+.card-container {
+    width: 90%;
+    margin: 3em auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    max-width: 500px;
+    margin-bottom: 3em;
+}
+
+.card img {
+    max-width: 500px;
+}
+
+.card h3 {
+    font-weight: 100;
+    font-family: Helvetica, sans-serif;
+    font-size: 2.5em;
 }
 
 
 
+.card p, .card a {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    text-decoration: none;
+    padding-top: 1em;
+}
+
+.card p {
+    color: rgb(162, 162, 162);
+}
+
+.card a {
+    color: black;
+}
+
+.arrow {
+    font-size: .6em;
+    padding-left: 5px;
+    padding-top: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+aside {
+    margin-top: 10em;
+    margin-bottom: 5em;;
+    padding-left: 5%;
+    color: rgb(162, 162, 162);
+    font-style: italic;
+}
+
+
+aside a {
+    color: black;
+    text-decoration: none;
+}
+
+
+footer {
+    padding: 2em;
+    text-align: center;
+    border-top: 2px solid rgb(233, 233, 233);
+}
+
+
+footer img {
+    height: 50px;
+}
+
+
+@media only screen and (max-width: 1600px) {
+    .card {
+        max-width: 350px;
+        margin-bottom: 3em;
+    }
+    
+    .card img {
+        max-width: 350px;
+    }
+
+    .card p, .card a {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.5em;
+        text-decoration: none;
+        padding-top: 1em;
+    }
+
+    .card h3 {
+        font-weight: 100;
+        font-family: Helvetica, sans-serif;
+        font-size: 2.25em;
+    }
+  }
