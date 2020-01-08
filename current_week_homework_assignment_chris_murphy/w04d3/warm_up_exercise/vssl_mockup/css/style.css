@@ -54,6 +54,7 @@ nav {
 nav > li {
     list-style: none;
     letter-spacing: .2em;
+    padding: 10px;
 }
 
 nav > li > a {
