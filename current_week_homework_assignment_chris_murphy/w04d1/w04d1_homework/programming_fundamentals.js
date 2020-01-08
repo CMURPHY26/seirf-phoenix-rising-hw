@@ -87,5 +87,5 @@
 // I would have preferred to start with f2 because it was easier to understand and modify
 
 // Finally, the 'shorter' code style doesn't use semi-colons, except for the fourth line. Remove this semi-colon! Run the code, is this semi-colon necessary?
-// No the semi colon is not necessary as long as the code remains in that vertical structure
+// No the semi colon is not necessary as long as the code remains in that vertical structure it will run properly
 

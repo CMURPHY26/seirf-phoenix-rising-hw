@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    background-image: url("../img/sailboat.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.header-text, .nav-links {
+    text-transform: uppercase;
+}
+
+.header-text {
+    text-align: center;
+    color: white;
+    margin: auto;
+    font-size: 2em;
+    line-height: .8em;
+}
+
+.header-text h1 {
+    letter-spacing: .2em;
+    font-weight: 800;
+    font-size: 3em;
+}
+
+.header-text h4 {
+    font-size: .8em;
+    font-weight: normal;
+    letter-spacing: .2em;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 3em;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+nav > li {
+    list-style: none;
+    letter-spacing: .2em;
+}
+
+nav > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
