@@ -21,7 +21,7 @@ class Hero {
         }
         this.catchPhrases = ['i\'m fresher than day old pizza', 
         'you can\'t count my calories'];
-
+         }
         talkSass () {
             console.log(this.Math.floor(Math.random() * this.catchPhrases.length));
         }
@@ -34,4 +34,7 @@ class Hero {
             console.log('I\'m ready to rumble');
         }
     }
-}
+
+const dougie = new Hero("Dougie");
+console.log(dougie);
+
