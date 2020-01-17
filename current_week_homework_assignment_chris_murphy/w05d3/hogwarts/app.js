@@ -5,7 +5,13 @@ $( () => {
       } else {console.log('I did it! I linked jQuery and this js file!')};
       
 
+      const $container = $(".container");
+      
+      const $h1 = $("<h1>").text("Hogwarts");
 
+      console.log($h1);
+
+      $container.append($h1);
 
 
 

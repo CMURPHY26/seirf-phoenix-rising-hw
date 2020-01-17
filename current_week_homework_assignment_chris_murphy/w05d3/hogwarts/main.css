@@ -1,1 +1,7 @@
-body {background-color: rgb(139, 124, 232)}/*or any color of your choosing*/
+body {
+    background-color: rgb(139, 124, 232);
+    text-align: center;
+
+}
+
+/*or any color of your choosing*/
