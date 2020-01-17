@@ -45,6 +45,33 @@ $( () => {
       $("li").eq(4).addClass("dog");
       
 
+      //Year 4
+      const $h5 = $("<h5>").text("Spring 2017");
+      $container.append($h5);
+
+      const dayArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+      const $table = $("<table>");
+      const $thead = $("<thead>");
+      const $th1 = $("<th>").text("Day");
+      const $th2 = $("<th>").text("Classes");
+
+      $container.append($table);
+      $table.append($thead);
+      $thead.append($th1);
+      $thead.append($th2);
+
+      for(let i = 0; i < dayArray.length; i++) {
+        const $tr = $("<tr>");
+        const $td1 = $("<td>").text(dayArray[i]);
+        const $td2 = $("<td>").text("Herbology, Divination, History of Magic, Charms, Potions, Transfiguration, Defense Against the Dark Arts, Quidditch practice, etc.)");
+          $table.append($tr);
+          $tr.append($td1);
+          $tr.append($td2);
+      }
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(139, 124, 232);
+    background-color: rgb(199, 194, 232);
     text-align: center;
 }
 
@@ -13,6 +13,14 @@ li {
 
 .secret {
     opacity: 0.5;
+}
+
+table {
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid grey;
 }
 
 /*or any color of your choosing*/
