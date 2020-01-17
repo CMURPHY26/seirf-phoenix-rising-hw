@@ -1,7 +1,10 @@
 body {
     background-color: rgb(139, 124, 232);
     text-align: center;
+}
 
+.dog {
+    font-family: fantasy;
 }
 
 /*or any color of your choosing*/
