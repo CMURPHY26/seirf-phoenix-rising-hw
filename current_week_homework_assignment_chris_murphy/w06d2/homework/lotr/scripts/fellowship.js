@@ -38,11 +38,11 @@ const lands = ['The-Shire', 'Rivendell', 'Mordor'];
 const makeMiddleEarth = () => {
 
   // HINT: Make a console.log for each of your functions to make sure that, when you click, the correct function is being called!
-  console.log('making Middle Earth');
-  // console.log("Trying to make middle earth.");
+  // console.log('making Middle Earth');
+  console.log("Trying to make middle earth.");
 
   // 1. create a section tag with an id of middle-earth
-
+      
   // 2. append the section to the body of the DOM.
 
   // 3. use a for loop to iterate over the lands array that does the following:
