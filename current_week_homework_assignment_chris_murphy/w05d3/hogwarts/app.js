@@ -132,8 +132,25 @@ $( () => {
       // Fix your pet's leash by removing the class of cabbage (be sure to keep your pet's leash's original class)
       $leash.removeClass('cabbage');
 
+      //Year 7
+      // Though your time at Hogwarts is nearly over, your journey of learning has just begun
+      // Update your class schedule to read 'Fall 2018'
+      $h5.text("Fall 2018")
+      // Celebrate by buying more butter beer! Append a list item with the text 'Butter beer' as the first list item inside your unordered list with the value of trunk
+      let $butterBeer = $("<li>").text('Butter beer');
+      $ul.prepend($butterBeer);
 
+      // Whoops! You broke your trunk when you stood on it while singing karaoke. Get a new storage container for your stuff; replace the unordered list's property of trunk with a new property of chest
+      $ul.attr("storage", "chest");
 
+      // Add some CSS to your page. Feel free to experiment and make this page your own
+      $h5.css("font-size", "1.25em");
+      $thead.css("font-size", "1.5em");
+      $img = $('<img>').attr('src', 'https://cdn.europosters.eu/image/1300/posters/harry-potter-hogwarts-day-i71938.jpg').css("max-width", "500px");
+      $h1.after($img);
+      $h1.css('color', 'purple')
+
+      // Take a screenshot of your page and add it to your homework folder
       
 
 
