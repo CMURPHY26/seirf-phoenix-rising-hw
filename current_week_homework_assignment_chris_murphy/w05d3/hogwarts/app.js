@@ -95,8 +95,8 @@ $( () => {
       $h4Wand.remove();
 
       //Class was hard! Drink all your butter beer! (remove just the butter beer from your list)
-      //$("li").eq(0).remove();
-      $("li").eq(0).fadeOut();
+      $("li").eq(0).remove();
+      // $("li").eq(0).fadeOut();
       //Get a new wand (add the same element back with new text describing your new wand. Be sure to insert it after your pet in the DOM)
       $h4Wand.text("Regular Wand");
       $h4.after($h4Wand);
@@ -113,7 +113,25 @@ $( () => {
       $pet.remove();
       $h3.after($pet);
 
-      
+      //Year 6
+      // Nosey roommate alert! hide (use jQuery method hide) to hide all your belongings with a class of secret (give an argument of 'slow' - to see this function in action)
+      // $(".secret").hide('slow');
+
+      // Nosey roommate falls asleep 2 seconds later (chain the jQuery method delay on your hide method (give argument of at least 2000) to prevent showing your secret elements too soon.
+      $(".secret").delay(2000).hide('slow');
+
+      // Use jQuery method show to reveal all of your belongings with a class of secret (give an argument of 'slow' - to see this function in action)
+
+      $('.secret').delay(2000).show('slow');
+
+      // Accident! You transmogrified your pet's leash into half cabbage
+      // add the class cabbage to your pet's leash. Do not replace your pet's leash's original class. Your pet, which also has the same class, should remain unaffected
+      const $leash = $('li').eq(3).addClass("cabbage");
+
+      // add an attribute of color:CHARTREUSE; in your main.css for all elements that have a class of cabbage
+      // Fix your pet's leash by removing the class of cabbage (be sure to keep your pet's leash's original class)
+      $leash.removeClass('cabbage');
+
 
 
       
