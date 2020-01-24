@@ -17,6 +17,10 @@ const completeToDo = (event) => {
         let $toDo = $(event.currentTarget).parent();
         $toDo.css('background-color', "#ED6495");
         $("#completed").append($toDo)
+        $(event.currentTarget).text("REMOVE")
+        $(event.currentTarget).on("click", () => {
+            $toDo.remove();
+        })
 }
 
 
