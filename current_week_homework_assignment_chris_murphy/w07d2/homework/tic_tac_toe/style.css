@@ -14,7 +14,7 @@
 .boxes {
     width: 200px;
     height: 200px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -30,4 +30,53 @@
 
 h1, h2 {
     text-align: center;
+}
+
+#box1 {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#box2 {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+#box3 {
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+  }
+#box4 {
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+#box5 {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#box6 {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#box7 {
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+}
+
+#box8 {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+#box9 {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
 }

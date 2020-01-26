@@ -6,7 +6,7 @@ const generateGrid = () => {
     $("body").append($container);
     //LOOP to create 9 divs with class boxes
     for (let i = 1; i < 10; i++){
-    let $div = $("<div>").attr("id", i).addClass("boxes");
+    let $div = $("<div>").attr("id", "box" + i).addClass("boxes");
     //ADD click listener to mark the spot when clicked
     $div.on("click", markSpot);
     $container.append($div);
@@ -54,36 +54,36 @@ let playerTwoWinMessage = "Congrats! Player Two Wins!!";
 
 const playerOneWin = () => {
     if(
-        $("#5").text() === "X" && ($("#5").text() === $("#3").text() && $("#5").text() === $("#7").text())) {
+        $("#box5").text() === "X" && ($("#box5").text() === $("#box3").text() && $("#box5").text() === $("#box7").text())) {
         $(".messages").text(playerOneWinMessage);
         $("div").unbind();
     } else if (
-        $("#5").text() === "X" && ($("#5").text() === $("#1").text() && $("#5").text() === $("#9").text())) {
+        $("#box5").text() === "X" && ($("#box5").text() === $("#box1").text() && $("#box5").text() === $("#box9").text())) {
         $(".messages").text(playerOneWinMessage);
         $("div").unbind();
     } else if (
-        $("#5").text() === "X" && ($("#5").text() === $("#4").text() && $("#5").text() === $("#6").text())) {
+        $("#box5").text() === "X" && ($("#box5").text() === $("#box4").text() && $("#box5").text() === $("#box6").text())) {
         $(".messages").text(playerOneWinMessage);
         $("div").unbind();
     } else if (
-        $("#2").text() === "X" && ($("#2").text() === $("#5").text() && $("#2").text() === $("#8").text())) {
+        $("#box2").text() === "X" && ($("#box2").text() === $("#box5").text() && $("#box2").text() === $("#box8").text())) {
         $(".messages").text(playerOneWinMessage);
         $("div").unbind();
     } else if (
-        $("#2").text() === "X" && ($("#2").text() === $("#1").text() && $("#2").text() === $("#3").text())) {
+        $("#box2").text() === "X" && ($("#box2").text() === $("#box1").text() && $("#box2").text() === $("#box3").text())) {
         $(".messages").text(playerOneWinMessage);
         $("div").unbind();
     } else if (
-        $("#1").text() === "X" && ($("#1").text() === $("#4").text() && $("#1").text() === $("#7").text())) {
+        $("#box1").text() === "X" && ($("#box1").text() === $("#box4").text() && $("#box1").text() === $("#box7").text())) {
         $(".messages").text(playerOneWinMessage);
         $("div").unbind();
     } else if (
-        $("#3").text() === "X" && ($("#3").text() === $("#6").text() && $("#3").text() === $("#9").text())) {
+        $("#box3").text() === "X" && ($("#box3").text() === $("#box6").text() && $("#box3").text() === $("#box9").text())) {
         $(".messages").text(playerOneWinMessage);
         $("div").unbind();
     } 
     else if (
-        $("#7").text() === "X" && ($("#7").text() === ($("#8").text() && $("#7").text() === $("#9").text()))) {
+        $("#box7").text() === "X" && ($("#box7").text() === ($("#box8").text() && $("#box7").text() === $("#box9").text()))) {
             $(".messages").text(playerOneWinMessage);
             $("div").unbind();
         }
@@ -91,36 +91,36 @@ const playerOneWin = () => {
 
 const playerTwoWin = () => {
     if(
-        $("#5").text() === "O" && ($("#5").text() === $("#3").text() && $("#5").text() === $("#7").text())) {
+        $("#box5").text() === "O" && ($("#box5").text() === $("#box3").text() && $("#box5").text() === $("#box7").text())) {
         $(".messages").text(playerTwoWinMessage);
         $("div").unbind();
     } else if (
-        $("#5").text() === "O" && ($("#5").text() === $("#1").text() && $("#5").text() === $("#9").text())) {
+        $("#box5").text() === "O" && ($("#box5").text() === $("#box1").text() && $("#box5").text() === $("#box9").text())) {
         $(".messages").text(playerTwoWinMessage);
         $("div").unbind();
     } else if (
-        $("#5").text() === "O" && ($("#5").text() === $("#4").text() && $("#5").text() === $("#6").text())) {
+        $("#box5").text() === "O" && ($("#box5").text() === $("#box4").text() && $("#box5").text() === $("#box6").text())) {
         $(".messages").text(playerTwoWinMessage);
         $("div").unbind();
     } else if (
-        $("#2").text() === "O" && ($("#2").text() === $("#5").text() && $("#2").text() === $("#8").text())) {
+        $("#box2").text() === "O" && ($("#box2").text() === $("#box5").text() && $("#box2").text() === $("#box8").text())) {
         $(".messages").text(playerTwoWinMessage);
         $("div").unbind();
     } else if (
-        $("#2").text() === "O" && ($("#2").text() === $("#1").text() && $("#2").text() === $("#2").text() === $("#3").text())) {
+        $("#box2").text() === "O" && ($("#box2").text() === $("#box1").text() && $("#box2").text() === $("#box2").text() === $("#box3").text())) {
         $(".messages").text(playerTwoWinMessage);
         $("div").unbind();
     } else if (
-        $("#1").text() === "O" && ($("#1").text() === $("#4").text() && $("#1").text() === $("#7").text())) {
+        $("#box1").text() === "O" && ($("#box1").text() === $("#box4").text() && $("#box1").text() === $("#box7").text())) {
         $(".messages").text(playerTwoWinMessage);
         $("div").unbind();
     } else if (
-        $("#3").text() === "O" && ($("#3").text() === $("#6").text() && $("#3").text() === $("#9").text())) {
+        $("#box3").text() === "O" && ($("#box3").text() === $("#box6").text() && $("#box3").text() === $("#box9").text())) {
         $(".messages").text(playerTwoWinMessage);
         $("div").unbind();
     } 
     else if (
-        $("#7").text() === "O" && ($("#7").text() === $("#8").text() && $("#7").text() === $("#9").text())) {
+        $("#box7").text() === "O" && ($("#box7").text() === $("#box8").text() && $("#box7").text() === $("#box9").text())) {
             $(".messages").text(playerTwoWinMessage);
             $("div").unbind();
         }
