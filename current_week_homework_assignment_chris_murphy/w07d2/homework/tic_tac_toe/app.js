@@ -125,17 +125,18 @@ const playerTwoWin = () => {
             $("div").unbind();
         }
 }
-// let winMessage = $(".messages").text("Congrats! You Won!!");
+
 
 const winGame = () => {
     playerOneWin();
     playerTwoWin();
+    if(numPlayerMoves === 9) {
+        $(".messages").text("Tied Game!!!")
+    }
 }
 
 
 $(() => {
     console.log("It's working!")
     generateGrid();
-    
-    // $(".container").on("click", markSpot);
 });
