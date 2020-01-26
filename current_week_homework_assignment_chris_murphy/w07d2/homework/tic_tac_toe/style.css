@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: fantasy;
 }
 
 .container {
@@ -14,4 +15,8 @@
     width: 200px;
     height: 200px;
     border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 150px;
 }
