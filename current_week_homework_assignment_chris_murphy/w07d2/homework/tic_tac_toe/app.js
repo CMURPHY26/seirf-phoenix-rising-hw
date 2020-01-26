@@ -11,8 +11,8 @@ const generateGrid = () => {
     $div.on("click", markSpot);
     $container.append($div);
     }
-    let $messages = $("<div>").addClass("messages").text("First Player's Move");
-    $("body").append($messages);
+    let $messages = $("<div>").addClass("messages").text("Player One's Turn");
+    $(".container").before($messages);
 }
 
 //Declare variable for array of player moves and number of moves
@@ -39,11 +39,11 @@ const markSpot = (event) => {
     // console.log($(".messages").text());
 
     //Player move message logic
-    if($(".messages").text() === "First Player's Move") {
+    if($(".messages").text() === "Player One's Turn") {
         // $(".messages").empty();
-        $(".messages").text("Second Player's Move");
+        $(".messages").text("Player Two's Turn");
     } else {
-        $(".messages").text("First Player's Move");
+        $(".messages").text("Player One's Turn");
     }
 
     winGame();
