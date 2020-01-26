@@ -15,8 +15,9 @@ const generateGrid = () => {
     $("body").append($messages);
 }
 
-//Declare variable for array of player moves
+//Declare variable for array of player moves and number of moves
 let playerArray = ["X","O"];
+let numPlayerMoves = 0;
 
 //CREATE function to mark the spot
 const markSpot = (event) => {
@@ -33,20 +34,92 @@ const markSpot = (event) => {
     boxClicked.append(playerArray[0]);
     playerArray.push(playerArray[0]);
     playerArray.shift(playerArray[0]);
+    numPlayerMoves += 1;
     }
     // console.log($(".messages").text());
+
+    //Player move message logic
     if($(".messages").text() === "First Player's Move") {
-        $(".messages").empty();
+        // $(".messages").empty();
         $(".messages").text("Second Player's Move");
     } else {
         $(".messages").text("First Player's Move");
     }
 
-
+    winGame();
 }
+
+let playerOneWinMessage = "Congrats! Player One Wins!!";
+let playerTwoWinMessage = "Congrats! Player Two Wins!!";
+
+const playerOneWin = () => {
+    if(
+        $("#5").text() === "X" && ($("#5").text() === ($("#3").text() && $("#7").text()))) {
+        $(".messages").text(playerOneWinMessage);
+    } else if (
+        $("#5").text() === "X" && ($("#5").text() === ($("#1").text() && $("#9").text()))) {
+        $(".messages").text(playerOneWinMessage);
+    } else if (
+        $("#5").text() === "X" && ($("#5").text() === ($("#4").text() && $("#6").text()))) {
+        $(".messages").text(playerOneWinMessage);
+    } else if (
+        $("#2").text() === "X" && ($("#2").text() === ($("#5").text() && $("#8").text()))) {
+        $(".messages").text(playerOneWinMessage);
+    } else if (
+        $("#2").text() === "X" && ($("#2").text() === ($("#1").text() && $("#3").text()))) {
+        $(".messages").text(playerOneWinMessage);
+    } else if (
+        $("#1").text() === "X" && ($("#1").text() === ($("#4").text() && $("#7").text()))) {
+        $(".messages").text(playerOneWinMessage);
+    } else if (
+        $("#3").text() === "X" && ($("#3").text() === ($("#6").text() && $("#9").text()))) {
+        $(".messages").text(playerOneWinMessage);
+    } 
+    else if (
+        $("#7").text() === "X" && ($("#7").text() === ($("#8").text() && $("#9").text()))) {
+            $(".messages").text(playerOneWinMessage);
+        }
+}
+
+const playerTwoWin = () => {
+    if(
+        $("#5").text() === "O" && ($("#5").text() === ($("#3").text() && $("#7").text()))) {
+        $(".messages").text(playerTwoWinMessage);
+    } else if (
+        $("#5").text() === "O" && ($("#5").text() === ($("#1").text() && $("#9").text()))) {
+        $(".messages").text(playerTwoWinMessage);
+    } else if (
+        $("#5").text() === "O" && ($("#5").text() === ($("#4").text() && $("#6").text()))) {
+        $(".messages").text(playerTwoWinMessage);
+    } else if (
+        $("#2").text() === "O" && ($("#2").text() === ($("#5").text() && $("#8").text()))) {
+        $(".messages").text(playerTwoWinMessage);
+    } else if (
+        $("#2").text() === "O" && ($("#2").text() === ($("#1").text() && $("#3").text()))) {
+        $(".messages").text(playerTwoWinMessage);
+    } else if (
+        $("#1").text() === "O" && ($("#1").text() === ($("#4").text() && $("#7").text()))) {
+        $(".messages").text(playerTwoWinMessage);
+    } else if (
+        $("#3").text() === "O" && ($("#3").text() === ($("#6").text() && $("#9").text()))) {
+        $(".messages").text(playerTwoWinMessage);
+    } 
+    else if (
+        $("#7").text() === "O" && ($("#7").text() === ($("#8").text() && $("#9").text()))) {
+            $(".messages").text(playerTwoWinMessage);
+        }
+}
+// let winMessage = $(".messages").text("Congrats! You Won!!");
+
+const winGame = () => {
+    playerOneWin();
+    playerTwoWin();
+}
+
 
 $(() => {
     console.log("It's working!")
-    generateGrid()
+    generateGrid();
+    
     // $(".container").on("click", markSpot);
 });
