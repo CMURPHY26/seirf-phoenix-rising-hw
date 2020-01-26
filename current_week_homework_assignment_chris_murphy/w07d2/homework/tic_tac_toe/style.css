@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    width: 790px;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.boxes {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
