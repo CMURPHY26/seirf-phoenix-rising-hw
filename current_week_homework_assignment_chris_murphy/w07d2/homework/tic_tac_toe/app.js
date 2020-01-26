@@ -11,6 +11,8 @@ const generateGrid = () => {
     $div.on("click", markSpot);
     $container.append($div);
     }
+    let $messages = $("<div>").addClass("messages").text("First Player's Move");
+    $("body").append($messages);
 }
 
 //Declare variable for array of player moves
@@ -32,6 +34,15 @@ const markSpot = (event) => {
     playerArray.push(playerArray[0]);
     playerArray.shift(playerArray[0]);
     }
+    // console.log($(".messages").text());
+    if($(".messages").text() === "First Player's Move") {
+        $(".messages").empty();
+        $(".messages").text("Second Player's Move");
+    } else {
+        $(".messages").text("First Player's Move");
+    }
+
+
 }
 
 $(() => {
