@@ -14,5 +14,7 @@ Port 80 is used for all http requests
 This is the underlying protocol of the web that defines how messages are formatted and transmitted in the request-response cycle.
 
 ## Define Front End
+The front-end of the web is the part that you can see and interact with. It consists of two parts - the web design and front-end web development. The primary front-end languages include HTML, CSS, and JavaScript.
 
 ## According to the article, what are the three parts of the backend?
+The three parts of the backend are the server, application and a database. Backend technologies include PHP, Ruby, Python, etc.
