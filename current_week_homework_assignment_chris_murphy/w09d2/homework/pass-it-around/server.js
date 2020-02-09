@@ -35,3 +35,48 @@ app.get("/:number_of_bottles", (req,res) => {
     `);
     }
 });
+
+
+//Fibonacci
+
+
+app.get("/fibonacci/:num", (req, res) => {
+    let num = Number(req.params.num);
+
+    const isFibonacci = (fibNum) => {
+    
+        const fibonacci_series = (n) => {
+        if (n===1) 
+        {
+            return [0, 1];
+        } 
+        else 
+        {
+            let s = fibonacci_series(n - 1);
+            s.push(s[s.length - 1] + s[s.length - 2]);
+            return s;
+        }
+        };
+    
+        let fibonacciArray = fibonacci_series(100);
+        console.log(fibonacciArray);
+    
+        let numInArray = fibonacciArray.filter( num => {
+            if(num === fibNum) {
+                return num;
+            };
+        });
+
+        if (numInArray.length > 0) {
+            res.send("Very good. It is Fibonacci.")
+        } else {
+            res.send("I can tell this is not a fibonacci number.");
+        }
+
+    
+    
+    };
+    isFibonacci(num);
+});
+
+
