@@ -11,7 +11,7 @@ const pokemon = require("./models/pokemon.js");
 app.use(express.static('public'));
 
 app.get("/pokemon", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", {pokemon: pokemon});
 });
 
 

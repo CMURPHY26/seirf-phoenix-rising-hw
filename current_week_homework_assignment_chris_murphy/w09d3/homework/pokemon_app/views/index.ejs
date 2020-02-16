@@ -8,6 +8,10 @@
 </head>
 <body>
     <h1>See All the Pokemon</h1>
-    
+    <ul>
+        <% for(let i = 0; i < pokemon.length; i++ ) { %>
+            <li> <%= pokemon[i].name.toUpperCase() %> </li>
+       <% } %>
+    </ul>
 </body>
 </html>
