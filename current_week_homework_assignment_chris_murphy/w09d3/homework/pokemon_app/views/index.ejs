@@ -10,7 +10,7 @@
     <h1>See All the Pokemon</h1>
     <ul>
         <% for(let i = 0; i < pokemon.length; i++ ) { %>
-            <li> <%= pokemon[i].name.toUpperCase() %> </li>
+            <li> <a href="/pokemon/<%= i %>"><%= pokemon[i].name.toUpperCase() %> </a> </li>
        <% } %>
     </ul>
 </body>
