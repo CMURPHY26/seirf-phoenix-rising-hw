@@ -5,7 +5,15 @@ body {
     background: rgba(0,0,0,.3);
 }
 
+button {
+    background-color: white;
+}
 
-        /* <% for(let i = 0; i < Budget.length; i++ ) { %>
-        <tr><td><%= Budget[i].date %></td><td><%= Budget[i].name %></td><td><%= Budget[i].price %></td></tr>
-        <% } %> */
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h6 {
+    padding-left: 5%;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   <%- include('partials/head') %>
+
+</head>
+<body>
+    <div class="container">
+        <h1> <%= budget.name %> </h1>
+        <a href="/budgets"><button>Back</button></a>
+        <% for (key in budget) { %>
+        <h5><%= key %></h5>
+        <h6><%= budget[key] %></h6>
+       <% } %>
+    </div>
+</body>
+</html>
