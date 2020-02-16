@@ -8,9 +8,10 @@ const port = process.env.PORT;
 
 const pokemon = require("./models/pokemon.js");
 
+app.use(express.static('public'));
 
 app.get("/pokemon", (req, res) => {
-    res.send(pokemon);
+    res.render("index.ejs");
 });
 
 
