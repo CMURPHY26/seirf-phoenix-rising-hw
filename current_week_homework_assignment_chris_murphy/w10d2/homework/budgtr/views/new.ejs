@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   <%- include('partials/head') %>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Entry</h1>
+        <form action="/budget" method="POST">
+        <input type="text" name="date" placeholder="Date"/>
+        <input type="text" name="name" placeholder="Name"/>
+        <input type="text" name="amount" placeholder="Amount"/>
+        <input type="text" name="from" placeholder="From"/>
+        <input type="text" name="tags" placeholder="Tags"/> <br />
+        <input type="submit" value="Add Entry" />
+        </form>
+    </div>
+</body>
+</html>

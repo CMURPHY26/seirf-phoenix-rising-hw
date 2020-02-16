@@ -17,3 +17,7 @@ a {
 h6 {
     padding-left: 5%;
 }
+
+input[type="submit"] {
+    background-color: white;
+}
