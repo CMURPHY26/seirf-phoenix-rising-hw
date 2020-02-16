@@ -10,7 +10,7 @@ const Budget = require("./models/budget.js");
 
 app.use(express.static("public"));
 
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:true}));
 
 app.get("/budgets", (req, res) => {
     console.log(Budget);
@@ -19,6 +19,9 @@ app.get("/budgets", (req, res) => {
 
 app.post("/budgets/", (req, res) => {
     let budgetItem = req.body;
+    let tagsArray = budgetItem.tags.split(", ");
+    budgetItem.amount = Number(budgetItem.amount);
+    budgetItem.tags = tagsArray;
     console.log(budgetItem);
     Budget.push(budgetItem);
     res.redirect("/budgets/");
