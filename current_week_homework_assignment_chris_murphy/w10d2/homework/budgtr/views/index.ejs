@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Budgtr</h1>
+    <h4>Bank Account: <%= bankAccount %></h4>
     <table>
         <% for(let i = 0; i < budget.length; i++ ) { %>
         <tr><td><%= budget[i].date %></td><td><a href="/budgets/<%= i %>"><%= budget[i].name %></a></td><td><%= budget[i].amount %></td></tr>

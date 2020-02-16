@@ -14,7 +14,14 @@ app.use(express.urlencoded({extended:true}));
 
 app.get("/budgets", (req, res) => {
     console.log(Budget);
-    res.render("index.ejs", { budget: Budget });
+
+    let bankAccount = 0;
+
+    for (entry of Budget) {
+        bankAccount += entry.amount;
+    }
+
+    res.render("index.ejs", { budget: Budget, bankAccount: bankAccount });
 });
 
 app.post("/budgets/", (req, res) => {
@@ -25,6 +32,7 @@ app.post("/budgets/", (req, res) => {
     console.log(budgetItem);
     Budget.push(budgetItem);
     res.redirect("/budgets/");
+
 });
 
 app.get("/budgets/new", (req, res) => {
