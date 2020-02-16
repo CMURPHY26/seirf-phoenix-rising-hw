@@ -11,7 +11,8 @@ const Budget = require("./models/budget.js");
 app.use(express.static("public"));
 
 app.get("/budgets", (req, res) => {
-    res.render("index.ejs", { budget: Budget});
+    console.log(Budget);
+    res.render("index.ejs", { budget: Budget });
 });
 
 

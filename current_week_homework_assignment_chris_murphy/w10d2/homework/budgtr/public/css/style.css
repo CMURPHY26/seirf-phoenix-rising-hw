@@ -4,3 +4,8 @@
 body {
     background: rgba(0,0,0,.3);
 }
+
+
+        /* <% for(let i = 0; i < Budget.length; i++ ) { %>
+        <tr><td><%= Budget[i].date %></td><td><%= Budget[i].name %></td><td><%= Budget[i].price %></td></tr>
+        <% } %> */
