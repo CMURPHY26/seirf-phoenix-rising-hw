@@ -8,8 +8,10 @@
     <div class="container">
         <% for(let i = 0; i < pokemon.length; i++) { %>
             <div class="pokemon-card">
-                <img src=<%=pokemon[i].img %> alt="pokemon">
-                <h4><a href="/pokemon/<%=i %>"><%= pokemon[i].name %></a></h4>
+                <a href="/pokemon/<%=i %>">
+                    <img src=<%=pokemon[i].img %> alt="pokemon">
+                    <h4><%= pokemon[i].name %></h4>
+                </a>
             </div>
         <% } %>
     </div>
