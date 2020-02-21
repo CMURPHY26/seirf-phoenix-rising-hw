@@ -5,6 +5,10 @@
     font-family: "Press Start 2P";
 }
 
+body {
+    background-color: rgb(65, 77, 169);
+}
+
 .container {
     width: 75%;
     margin: auto;
@@ -15,15 +19,32 @@
 }
 
 .pokemon-card {
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.5);
+    background-color: white;
     max-width: 200px;
     margin: 5px 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    overflow: auto;
 }
 
 .pokemon-card img {
     max-width: 150px;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+.pokemon-show {
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.5);
+    background-color: white;
+    padding: 30px;
 }
