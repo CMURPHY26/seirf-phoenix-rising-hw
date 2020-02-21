@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Press Start 2P";
+}
+
+.container {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.pokemon-card {
+    max-width: 200px;
+    margin: auto 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* align-content: flex-end; */
+    justify-content: flex-end;
+}
+
+.pokemon-card img {
+    max-width: 150px;
+}

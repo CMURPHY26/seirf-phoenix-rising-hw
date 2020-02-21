@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head") -%>
+</head>
+<body>
+    <h1>Pokemon Info Page</h1>
+    <div class="container">
+       
+            <div class="pokemon-show">
+                <h2><%= pokemon.name %></h2>
+                <img src=<%= pokemon.img %> alt="pokemon">
+                <h3>Type</h3>
+                <ul>
+                    <% for(let i = 0; i < pokemon.type.length; i++) { %>
+                        <li><%= pokemon.type[i] %> </li>
+                    <% } %>
+                </ul>
+                <hr />
+                <h3>Stats</h3>
+                <h4>HP: <%= pokemon.stats.hp %></h4>
+                <h4>ATTACK: <%= pokemon.stats.attack %></h4>
+                <h4>DEFENSE: <%= pokemon.stats.defense %></h4>
+
+            </div>
+    </div>
+</body>
+</html>
