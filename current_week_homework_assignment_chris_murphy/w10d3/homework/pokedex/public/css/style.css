@@ -20,7 +20,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    /* align-content: flex-end; */
+    align-items: center;
     justify-content: flex-end;
 }
 
