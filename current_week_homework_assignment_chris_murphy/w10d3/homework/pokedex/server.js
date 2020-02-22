@@ -27,7 +27,16 @@ app.get("/pokemon/:id", (req,res) => {
 
 //CREATE ROUTE
 app.post("/pokemon", (req, res) => {
+    let type = req.body.type;
+    if ( type.includes(",")) {
+       type = type.split(",");
+    } else if (type.includes(", ")) {
+        type = type.split(", ");
+    } else {
+       type = [req.body.type];
+    }
     let stats = {hp: req.body.hp, attack: req.body.attack, defense: req.body.defense};
+    req.body.type = type;
     req.body.stats = stats;
     pokemon.push(req.body);
     res.redirect("/pokemon");
