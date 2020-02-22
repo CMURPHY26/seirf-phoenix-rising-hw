@@ -25,6 +25,14 @@ app.get("/pokemon/:id", (req,res) => {
     res.render("show.ejs", {pokemon: pokemon[req.params.id]});
 });
 
+//CREATE ROUTE
+app.post("/pokemon", (req, res) => {
+    let stats = {hp: req.body.hp, attack: req.body.attack, defense: req.body.defense};
+    req.body.stats = stats;
+    pokemon.push(req.body);
+    res.redirect("/pokemon");
+})
+
 //INDEX ROUTE
 app.get("/pokemon", (req, res) => {
     // res.send(pokemon);

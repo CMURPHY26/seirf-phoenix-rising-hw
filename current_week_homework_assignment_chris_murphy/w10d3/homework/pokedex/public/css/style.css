@@ -81,3 +81,17 @@ label {
     padding: 10px;
     margin: 20px;
 }
+
+#hlogo {
+    color: black;
+}
+
+#newh1, #newh3{
+    margin-left: 2%;
+    color: white;
+}
+
+#back {
+    background: black;
+    padding: 20px;
+}
