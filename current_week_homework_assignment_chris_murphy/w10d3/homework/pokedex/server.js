@@ -3,14 +3,12 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = process.env.PORT;
+const methodOverride = require("method-override");
 
 const pokemon = require("./models/pokemon.js")
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
-
-
-
-
+app.use(methodOverride("_method"));
 
 
 //NEW ROUTE
@@ -19,10 +17,15 @@ app.get("/pokemon/new", (req, res) => {
 });
 
 
-
 //SHOW ROUTE
 app.get("/pokemon/:id", (req,res) => {
     res.render("show.ejs", {pokemon: pokemon[req.params.id]});
+});
+
+//DESTROY ROUTE
+app.delete("/pokemon/:id", (req, res) => {
+    pokemon.splice(req.params.id, 1);
+    res.redirect("/pokemon");
 });
 
 //CREATE ROUTE
@@ -42,17 +45,18 @@ app.post("/pokemon", (req, res) => {
     res.redirect("/pokemon");
 })
 
+
 //INDEX ROUTE
 app.get("/pokemon", (req, res) => {
     // res.send(pokemon);
     res.render("index.ejs", {pokemon: pokemon});
 });
 
+
 //ROOT REDIRECT
 app.get("/", (req, res) => {
     res.redirect("/pokemon");
 })
-
 
 app.listen(port, () => {
     console.log("The server is running on port", port);
