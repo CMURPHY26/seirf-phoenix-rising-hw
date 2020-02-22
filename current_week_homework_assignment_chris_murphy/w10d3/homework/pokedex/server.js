@@ -16,11 +16,17 @@ app.get("/pokemon/new", (req, res) => {
     res.render("new.ejs");
 });
 
+//EDIT ROUTE
+app.get("/pokemon/:id/edit", (req, res) => {
+    res.render("edit.ejs", {pokemon: pokemon[req.params.id], index: req.params.id});
+});
+
 
 //SHOW ROUTE
 app.get("/pokemon/:id", (req,res) => {
     res.render("show.ejs", {pokemon: pokemon[req.params.id]});
 });
+
 
 //DESTROY ROUTE
 app.delete("/pokemon/:id", (req, res) => {
