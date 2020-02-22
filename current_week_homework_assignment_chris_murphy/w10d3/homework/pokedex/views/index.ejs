@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <%- include("partials/head") %>
+    <style>body {
+        background-size:auto;
+
+    }</style>
 </head>
 <body>
-    <h1>Pokemon!</h1>
+    <%- include("partials/header") %>
     <div class="container">
         <% for(let i = 0; i < pokemon.length; i++) { %>
             <div class="pokemon-card">

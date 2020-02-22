@@ -6,7 +6,10 @@
 }
 
 body {
-    background-color: rgb(65, 77, 169);
+    margin: 0;
+    background: url("../img/8621.jpeg");
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
@@ -47,4 +50,34 @@ a {
     border: 1px solid rgba(255,255,255,.5);
     background-color: white;
     padding: 30px;
+}
+
+.pokemon-show img {
+    max-width: 275px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    background: white;
+    margin-bottom: 2%;
+    padding: 0 10px 0 10px;
+}
+
+#add {
+    padding: 10px;
+    font-size: 1.5em;
+    background: white;
+    color: black;
+    font-family: "Press Start 2P";
+}
+
+input {
+    margin: 20px;
+}
+label {
+    background: white;
+    padding: 10px;
+    margin: 20px;
 }

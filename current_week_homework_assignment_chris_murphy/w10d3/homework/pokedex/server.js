@@ -13,15 +13,17 @@ app.use(express.urlencoded({extended: true}));
 
 
 
+//NEW ROUTE
+app.get("/pokemon/new", (req, res) => {
+    res.render("new.ejs");
+});
 
 
 
 //SHOW ROUTE
 app.get("/pokemon/:id", (req,res) => {
     res.render("show.ejs", {pokemon: pokemon[req.params.id]});
-})
-
-
+});
 
 //INDEX ROUTE
 app.get("/pokemon", (req, res) => {
