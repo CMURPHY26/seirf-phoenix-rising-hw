@@ -21,6 +21,27 @@ app.get("/pokemon/:id/edit", (req, res) => {
     res.render("edit.ejs", {pokemon: pokemon[req.params.id], index: req.params.id});
 });
 
+//UPDATE ROUTE
+app.put("/pokemon/:id", (req, res) => {
+    const stats = {hp: req.body.hp, attack: req.body.attack, defense: req.body.defense};
+
+    let type = req.body.type;
+    if ( type.includes(",")) {
+       type = type.split(",");
+    } else if (type.includes(", ")) {
+        type = type.split(", ");
+    } else {
+       type = [req.body.type];
+    }
+    if(!req.body.img) {
+        req.body.img = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/detective-pikachu-pokemon-1551188658.jpg?crop=0.416xw:1.00xh;0.360xw,0&resize=480:*";
+    }
+
+    const pokeObject = {id: req.body.id, type: type, img: req.body.img, name: req.body.name, stats: stats}
+    pokemon[req.params.id] = pokeObject;
+    res.redirect("/pokemon");
+});
+
 
 //SHOW ROUTE
 app.get("/pokemon/:id", (req,res) => {
@@ -44,6 +65,10 @@ app.post("/pokemon", (req, res) => {
     } else {
        type = [req.body.type];
     }
+    if(!req.body.img) {
+        req.body.img = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/detective-pikachu-pokemon-1551188658.jpg?crop=0.416xw:1.00xh;0.360xw,0&resize=480:*";
+    }
+
     let stats = {hp: req.body.hp, attack: req.body.attack, defense: req.body.defense};
     req.body.type = type;
     req.body.stats = stats;
