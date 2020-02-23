@@ -35,7 +35,7 @@ app.put("/pokemon/:id", (req, res) => {
        type = [req.body.type];
     }
     if(!req.body.img) {
-        req.body.img = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/detective-pikachu-pokemon-1551188658.jpg?crop=0.416xw:1.00xh;0.360xw,0&resize=480:*";
+        req.body.img = "https://images-na.ssl-images-amazon.com/images/I/31dQTRb3vHL._AC_.jpg";
     }
 
     const pokeObject = {id: req.body.id, type: type, img: req.body.img, name: req.body.name, stats: stats}
@@ -67,7 +67,7 @@ app.post("/pokemon", (req, res) => {
        type = [req.body.type];
     }
     if(!req.body.img) {
-        req.body.img = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/detective-pikachu-pokemon-1551188658.jpg?crop=0.416xw:1.00xh;0.360xw,0&resize=480:*";
+        req.body.img = "https://images-na.ssl-images-amazon.com/images/I/31dQTRb3vHL._AC_.jpg";
     }
 
     let stats = {hp: req.body.hp, attack: req.body.attack, defense: req.body.defense};
