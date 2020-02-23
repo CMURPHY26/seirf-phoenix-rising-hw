@@ -23,6 +23,7 @@ app.get("/pokemon/:id/edit", (req, res) => {
 
 //UPDATE ROUTE
 app.put("/pokemon/:id", (req, res) => {
+    let index = req.params.id;
     const stats = {hp: req.body.hp, attack: req.body.attack, defense: req.body.defense};
 
     let type = req.body.type;
@@ -39,13 +40,13 @@ app.put("/pokemon/:id", (req, res) => {
 
     const pokeObject = {id: req.body.id, type: type, img: req.body.img, name: req.body.name, stats: stats}
     pokemon[req.params.id] = pokeObject;
-    res.redirect("/pokemon");
+    res.redirect(`/pokemon/${index}`);
 });
 
 
 //SHOW ROUTE
 app.get("/pokemon/:id", (req,res) => {
-    res.render("show.ejs", {pokemon: pokemon[req.params.id]});
+    res.render("show.ejs", {pokemon: pokemon[req.params.id], index: req.params.id});
 });
 
 

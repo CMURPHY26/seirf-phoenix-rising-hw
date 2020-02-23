@@ -39,7 +39,7 @@ body {
 }
 
 .pokecard-hover {
-    box-shadow: 11px 11px 11px rgba(255,255,255,.9);
+    box-shadow: 8px 8px rgba(255,255,255,.8);
 }
 
 .pokemon-card form input[type="submit"]{
@@ -91,6 +91,16 @@ nav {
 input {
     margin: 20px;
 }
+
+.pokemon-form input {
+    padding: 20px;
+    font-size: 16px;
+}
+
+.pokemon-form h3 {
+    font-size: 2em;
+}
+
 label {
     background: white;
     padding: 10px;
