@@ -22,10 +22,12 @@ body {
 }
 
 .pokemon-card {
+    transition: box-shadow .3s;
     border-radius: 20px;
-    border: 1px solid rgba(255,255,255,.5);
+    border: 1px solid rgba(0,0,0,.2);
     background-color: white;
     max-width: 200px;
+    max-height: 350px;
     margin: 5px 20px;
     padding: 20px;
     display: flex;
@@ -33,7 +35,16 @@ body {
     text-align: center;
     align-items: center;
     justify-content: center;
-    overflow: auto;
+    overflow: hidden;
+}
+
+.pokecard-hover {
+    box-shadow: 11px 11px 11px rgba(255,255,255,.9);
+}
+
+.pokemon-card form input[type="submit"]{
+    font-family: "Press Start 2P";
+    font-size: 1em;
 }
 
 .pokemon-card img {
@@ -43,6 +54,10 @@ body {
 a {
     text-decoration: none;
     color: red;
+}
+
+#edit {
+    font-size: .75em;
 }
 
 .pokemon-show {
