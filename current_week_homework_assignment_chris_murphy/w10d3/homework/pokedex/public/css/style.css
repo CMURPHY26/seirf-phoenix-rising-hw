@@ -14,7 +14,7 @@ body {
 
 .container {
     width: 75%;
-    margin: auto;
+    margin: 5% auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -78,6 +78,7 @@ nav {
     background: white;
     margin-bottom: 2%;
     padding: 0 10px 0 10px;
+    box-shadow: 5px 5px 2px rgba(255,255,255,.5);
 }
 
 #add {
@@ -91,6 +92,12 @@ nav {
 input {
     margin: 20px;
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
 
 .pokemon-form input {
     padding: 20px;
