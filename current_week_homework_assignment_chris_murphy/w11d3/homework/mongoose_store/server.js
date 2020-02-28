@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT;
 const mongoose = require('mongoose');
+const methodOverride = require("method-override");
 
 
 mongoose.connect('mongodb://localhost:27017/productsdb', { useNewUrlParser: true, useUnifiedTopology: true});
@@ -12,8 +13,9 @@ mongoose.connection.once('open', ()=> {
 });
 
 const Product = require("./models/products.js");
-
+app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
 
 
 //ROUTES
@@ -52,8 +54,21 @@ app.get('/seed', async (req, res) => {
 
 
 
+//SHOW ROUTE
+app.get("/products/:id", (req, res) => {
+    Product.findById(req.params.id, (err, product) =>{
+        res.render("show.ejs", {product});
+    })
+});
 
 
+//INDEX ROUTE
+app.get("/products", (req, res) => {
+    Product.find( {}, (err, products) => {
+        console.log(products);
+        res.render("index.ejs", {products: products});
+    })
+});
 
 
 app.listen(port, () =>{
