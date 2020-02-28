@@ -57,7 +57,7 @@ app.get('/seed', async (req, res) => {
 //SHOW ROUTE
 app.get("/products/:id", (req, res) => {
     Product.findById(req.params.id, (err, product) =>{
-        res.render("show.ejs", {product});
+        res.render("show.ejs", {product: product});
     })
 });
 
