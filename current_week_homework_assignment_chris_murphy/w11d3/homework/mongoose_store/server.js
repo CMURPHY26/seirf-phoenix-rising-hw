@@ -65,7 +65,7 @@ app.get("/products/:id", (req, res) => {
 //INDEX ROUTE
 app.get("/products", (req, res) => {
     Product.find( {}, (err, products) => {
-        console.log(products);
+        // console.log(products);
         res.render("index.ejs", {products: products});
     })
 });
