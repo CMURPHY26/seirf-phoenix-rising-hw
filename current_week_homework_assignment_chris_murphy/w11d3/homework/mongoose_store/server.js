@@ -53,6 +53,20 @@ app.get('/seed', async (req, res) => {
   })
 
 
+//NEW ROUTE
+app.get("/products/new", (req,res) => {
+    res.render("new.ejs");
+})
+
+//CREATE ROUTE
+
+app.post("/products", (req, res) => {
+    Product.create(req.body, (error, result) => {
+        res.send(req.body);
+    })
+    res.redirect(`/products/`);
+
+})
 
 //SHOW ROUTE
 app.get("/products/:id", (req, res) => {
