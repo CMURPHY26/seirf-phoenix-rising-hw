@@ -46,7 +46,7 @@ app.get('/seed', async (req, res) => {
   
     try {
       const seedItems = await Product.create(newProducts)
-      res.send(seedItems)
+      res.redirect("/products")
     } catch (err) {
       res.send(err.message)
     }
@@ -85,13 +85,6 @@ app.put("/products/:id", (req, res) => {
 });
 
 
-//DELETE ROUTE
-app.delete("products/:id", (req, res) => {
-  Product.findByIdAndRemove(req.params.id, (err, document) => {
-    res.redirect("/products");
-  })
-});
-
 
 //SHOW ROUTE
 app.get("/products/:id", (req, res) => {
@@ -107,6 +100,13 @@ app.get("/products", (req, res) => {
         // console.log(products);
         res.render("index.ejs", {products: products});
     })
+});
+
+//DELETE ROUTE
+app.delete("/products/:id", (req, res) => {
+  Product.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect("/products");
+  })
 });
 
 
