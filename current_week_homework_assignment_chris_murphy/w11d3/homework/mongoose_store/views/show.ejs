@@ -11,6 +11,7 @@
         <div class="product-card">
             <div class="info">
                 <h3><%= product.name %></h3>
+                <h5><a href="/products/<%=id%>/edit">Edit this product</a></h5>
                 <img src=<%= product.img %> alt=<%= product.name%>>
                 <p><%= product.description%></p>
                 <h4>Price: $<%= product.price %></h4>

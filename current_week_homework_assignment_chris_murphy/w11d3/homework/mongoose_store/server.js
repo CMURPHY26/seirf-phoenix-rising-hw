@@ -56,22 +56,40 @@ app.get('/seed', async (req, res) => {
 //NEW ROUTE
 app.get("/products/new", (req,res) => {
     res.render("new.ejs");
-})
+});
 
 //CREATE ROUTE
-
 app.post("/products", (req, res) => {
     Product.create(req.body, (error, result) => {
         res.send(req.body);
     })
     res.redirect(`/products/`);
 
+});
+
+
+//EDIT ROUTE
+app.get("/products/:id/edit", (req, res) => {
+  Product.findById(req.params.id, (err, product) =>{
+    res.render("edit.ejs", {id: req.params.id})
+  })
 })
+
+
+//UPDATE ROUTE
+app.put("/products/:id", (req, res) => {
+  Product.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
+    res.send(updatedModel);
+  })
+  res.redirect("/products");
+});
+
+
 
 //SHOW ROUTE
 app.get("/products/:id", (req, res) => {
     Product.findById(req.params.id, (err, product) =>{
-        res.render("show.ejs", {product: product});
+        res.render("show.ejs", {product: product, id: req.params.id});
     })
 });
 

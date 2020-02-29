@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head") %>
+</head>
+<body>
+    <h1>Edit Product</h1>
+    <div class="container">
+        <form action="/products/<%=id%>?_method=PUT" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" /><br />
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description"><br />
+            <label for="img">Image URL:</label>
+            <input type="text" name="img" id="img" /><br />
+            <label for="price">Price:</label>
+            <input type="text" name="price" id="price"><br />
+            <label for="qty">Quantity:</label>
+            <input type="text" name="qty" id="qty"><br />
+            <input type="submit" value="UPDATE PRODUCT">
+        </form>
+    </div>
+</body>
+</html>
