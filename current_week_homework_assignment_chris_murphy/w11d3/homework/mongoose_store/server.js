@@ -79,9 +79,9 @@ app.get("/products/:id/edit", (req, res) => {
 //UPDATE ROUTE
 app.put("/products/:id", (req, res) => {
   Product.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
-    res.send(updatedModel);
+    // res.send(updatedModel);
+    res.redirect(`/products/${updatedModel.id}`);
   })
-  res.redirect("/products");
 });
 
 
@@ -108,6 +108,11 @@ app.delete("/products/:id", (req, res) => {
     res.redirect("/products");
   })
 });
+
+//ROOT REDIRECT ROUTE
+app.get("/", (req, res) => {
+  res.redirect("/products")
+})
 
 
 app.listen(port, () =>{
