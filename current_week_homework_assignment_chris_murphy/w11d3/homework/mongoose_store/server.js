@@ -61,9 +61,8 @@ app.get("/products/new", (req,res) => {
 //CREATE ROUTE
 app.post("/products", (req, res) => {
     Product.create(req.body, (error, result) => {
-        res.send(req.body);
+      res.redirect(`/products/${result.id}`);
     })
-    res.redirect(`/products/`);
 
 });
 
