@@ -19,7 +19,7 @@
                     <h3 class="out-of-stock">OUT OF STOCK</h3>
                 <% } else if (product.qty > 0 ) { %>
                     <h3><%= product.qty %> remaining</h3>
-                    <form action="/products" method="POST">
+                    <form action="/products/<%= product.id%>/buy?_method=PUT" method="POST">
                         <input type="submit" value="BUY">
                     </form>
                <% } %> 
