@@ -85,6 +85,13 @@ app.put("/products/:id", (req, res) => {
 });
 
 
+//DELETE ROUTE
+app.delete("products/:id", (req, res) => {
+  Product.findByIdAndRemove(req.params.id, (err, document) => {
+    res.redirect("/products");
+  })
+});
+
 
 //SHOW ROUTE
 app.get("/products/:id", (req, res) => {
