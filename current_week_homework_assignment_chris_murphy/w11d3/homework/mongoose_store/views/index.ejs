@@ -4,18 +4,19 @@
     <%- include("partials/head") %>
 </head>
 <body>
-    <h1>Products</h1>
-    <h3><a href="/products/new">Add a new product</a></h3>
-    <div class="container">
-       <% for(let i = 0; i < products.length; i++){ %>
-        <div class="products">
-            <a href="/products/<%= products[i].id%>">
-                <h3><%= products[i].name %></h3>
-                <img src=<%= products[i].img %> alt=<%= products[i].name%>>
-                <h4>Price: $<%= products[i].price %></h4>
-            </a>
+    <%- include("partials/header") %>
+    <main>
+        <div class="container">
+        <% for(let i = 0; i < products.length; i++){ %>
+            <div class="products">
+                <a href="/products/<%= products[i].id%>">
+                    <h2><%= products[i].name %></h2>
+                    <img src=<%= products[i].img %> alt=<%= products[i].name%>>
+                    <h3>Price: $<%= products[i].price %></h3>
+                </a>
+            </div>
+        <% } %>
         </div>
-       <% } %>
-    </div>
+    </main>
 </body>
 </html>

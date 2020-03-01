@@ -1,6 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+13px|Ultra&display=swap');
+
 * {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Slabo 13px';
+}
+
+body {
+    background: url("../img/background2.jpg");
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size:cover;
+    color: white;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h5 a {
+    color: #FFFFFF;
 }
 
 .container {
@@ -12,7 +31,15 @@
 }
 
 .products {
+    margin: 50px;
     text-align: center;
+    background: rgba(0,0,0,.7);
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.products img {
+    display: block;
 }
 
 .product-card {
@@ -20,4 +47,103 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    background: rgba(0,0,0,.6);
+    padding: 4%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+.products img {
+ max-width: 100px;
+}
+
+.product-card a, .products a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.product-card img {
+    max-width: 200px;
+}
+
+#delete, #buy {
+    font-size: 1.5em;
+    margin: 1% 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+nav {
+    background: rgba(0,0,0,.8);
+    margin-top: 0;
+    padding: 30px;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav > ul > li {
+    font-size: 20px;
+    list-style: none;
+}
+
+nav >  ul > li > h1, nav >  ul > li > h3 {
+    margin: 0;
+}
+
+a:active {
+    color: gray;
+}
+a:visited {
+    color:white;
+}
+
+
+#logo {
+    font-size: 50px;
+}
+
+#logo > h1 > a {
+    font-family: "Ultra", sans-serif;
+}
+
+#add {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#addh1, #edith1 {
+    text-align: center;
+    width: 200px;
+    margin: 0 auto; 
+}
+
+#addh1 > h1, #edith1 > h1 {
+    font-family: 'Slabo 13px';
+    background: rgba(0,0,0,.8);
+    border-radius: 20px;
+}
+ 
+
+#add > h3 > a {
+    font-family: 'Slabo 13px';
+}
+
+form label, form input {
+    font-family: 'Slabo 13px';
+    font-size: 20px;;
+    margin: 5px;
+}
+
+form {
+    background: rgba(0,0,0,.8);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.info form {
+    background: none;
 }

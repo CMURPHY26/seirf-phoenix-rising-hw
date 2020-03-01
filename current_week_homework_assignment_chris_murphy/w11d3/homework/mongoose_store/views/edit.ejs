@@ -4,19 +4,22 @@
     <%- include("partials/head") %>
 </head>
 <body>
-    <h1>Edit Product</h1>
+    <%- include("partials/header") %>
+    <div id="edith1">
+        <h1>Edit Your Product</h1>
+    </div>
     <div class="container">
         <form action="/products/<%=id%>?_method=PUT" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" /><br />
-            <label for="description">Description:</label>
-            <input type="text" name="description" id="description"><br />
-            <label for="img">Image URL:</label>
-            <input type="text" name="img" id="img" /><br />
-            <label for="price">Price:</label>
-            <input type="text" name="price" id="price"><br />
-            <label for="qty">Quantity:</label>
-            <input type="text" name="qty" id="qty"><br />
+            <label for="name">Name:</label><br />
+            <input type="text" name="name" id="name" value="<%=product.name%>" /><br />
+            <label for="description">Description:</label><br />
+            <input type="text" name="description" id="description" value="<%=product.description%>" /><br />
+            <label for="img">Image URL:</label><br />
+            <input type="text" name="img" id="img" value="<%=product.img%>" /><br />
+            <label for="price">Price:</label><br />
+            <input type="text" name="price" id="price" value="<%=product.price%>" /><br />
+            <label for="qty">Quantity:</label><br />
+            <input type="text" name="qty" id="qty" value="<%=product.qty%>" /><br />
             <input type="submit" value="UPDATE PRODUCT">
         </form>
     </div>

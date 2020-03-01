@@ -4,18 +4,21 @@
     <%- include("partials/head") %>
 </head>
 <body>
-    <h1>Add Product</h1>
+    <%- include("partials/header") %>
+    <div id="addh1">
+        <h1>Add a Product</h1>
+    </div>
     <div class="container">
         <form action="/products" method="POST">
-            <label for="name">Name:</label>
+            <label for="name">Name:</label><br />
             <input type="text" name="name" id="name" /><br />
-            <label for="description">Description:</label>
+            <label for="description">Description:</label><br />
             <input type="text" name="description" id="description"><br />
-            <label for="img">Image URL:</label>
+            <label for="img">Image URL:</label><br />
             <input type="text" name="img" id="img" /><br />
-            <label for="price">Price:</label>
+            <label for="price">Price:</label><br />
             <input type="text" name="price" id="price"><br />
-            <label for="qty">Quantity:</label>
+            <label for="qty">Quantity:</label><br />
             <input type="text" name="qty" id="qty"><br />
             <input type="submit" value="ADD PRODUCT">
         </form>
