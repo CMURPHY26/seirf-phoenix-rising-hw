@@ -108,3 +108,24 @@
 
 
 ############################################################
+
+
+# # Methods
+# # Write a method named find_area that finds the area of a rectangle when given values for width and height
+
+# # REMEMBER: In Ruby, the keyword return is implied and can be omitted!
+# def find_area height, width
+#     height * width
+# end
+# p find_area 10, 5
+# # Write a method named multiply_each_by_five that will loop over the given nums array below and print each number multiplied by 5
+
+# nums = [5, 5, 6, 7, 2, 4, 3, 2, 1, 9, 7, 6, 0, 0]
+
+# def multiply_each_by_five arr
+#     arr.each {|num| p num * 5}
+# end
+
+# multiply_each_by_five nums
+
+############################################################
