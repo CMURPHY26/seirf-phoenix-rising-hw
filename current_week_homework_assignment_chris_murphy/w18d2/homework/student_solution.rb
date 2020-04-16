@@ -1,3 +1,4 @@
+require 'prime'
 # # Hello World
 # # Print "Hello World" to the console
 # p "Hello World"
@@ -194,3 +195,39 @@
 
 
 ############################################################
+# Primes
+# Write a method called check_prime? that will test whether a number is Prime. The method will return true if Prime, false if not.
+
+def check_prime? num
+    Prime.prime?(num)
+end
+
+p check_prime? 6
+
+# Write another method called get_primes that will print all the Primes up to an arbitrary limit. For example, if you invoke your method with get_primes 100, it will print all the Prime numbers up to and including 100.
+
+# def get_primes num
+#     Prime.each(num) do |prime|
+#         p prime
+#     end
+# end
+
+# get_primes 100
+
+# This method can call on the previous check_prime? method.
+# Check out the documentation on Ruby's Prime class
+
+def get_primes num
+    (1..num).each do |num|
+       if check_prime? num
+            p num
+       end
+    end
+end
+
+get_primes 100
+
+
+# Reminders:
+
+# A Prime number is a number that is not evenly divisible by another number except 1 and itself. To test whether a number is Prime, you only need to test as far as the square root of that number. This is advisable for optimization and testing large numbers.
