@@ -129,3 +129,45 @@
 # multiply_each_by_five nums
 
 ############################################################
+
+# # Methods With a Hash
+# # Use the following given hashes to solve the problems below
+
+# # Hashes
+
+# book = {
+#   title: 'The Great Gatsby',
+#   author: 'F Scott Fitzgerald',
+#   year: 1925,
+#   price: 10
+# }
+
+# lamp = {
+#   type: 'reading',
+#   brand: 'Ikea',
+#   price: 25
+# }
+
+# table = {
+#   type: 'bed side',
+#   brand: 'Crate & Barrel',
+#   color: 'birch',
+#   price: 50
+# }
+# # Write a method named print_price that will take in any hash and return the price of the item.
+
+# def print_price item
+#     p item[:price]
+# end
+
+# print_price lamp
+
+# # Write a method named print_item_sums that will take in two hashes and will return the sum of the prices for the items in the hashes.
+
+# def print_item_sums hsh1, hsh2
+#     hsh1[:price] + hsh2[:price]
+# end
+
+# p print_item_sums table, book
+
+############################################################
