@@ -195,39 +195,79 @@ require 'prime'
 
 
 ############################################################
-# Primes
-# Write a method called check_prime? that will test whether a number is Prime. The method will return true if Prime, false if not.
+# # Primes
+# # Write a method called check_prime? that will test whether a number is Prime. The method will return true if Prime, false if not.
 
-def check_prime? num
-    Prime.prime?(num)
-end
+# def check_prime? num
+#     Prime.prime?(num)
+# end
 
-p check_prime? 6
+# p check_prime? 6
 
-# Write another method called get_primes that will print all the Primes up to an arbitrary limit. For example, if you invoke your method with get_primes 100, it will print all the Prime numbers up to and including 100.
+# # Write another method called get_primes that will print all the Primes up to an arbitrary limit. For example, if you invoke your method with get_primes 100, it will print all the Prime numbers up to and including 100.
+
+# # def get_primes num
+# #     Prime.each(num) do |prime|
+# #         p prime
+# #     end
+# # end
+
+# # get_primes 100
+
+# # This method can call on the previous check_prime? method.
+# # Check out the documentation on Ruby's Prime class
 
 # def get_primes num
-#     Prime.each(num) do |prime|
-#         p prime
+#     (1..num).each do |num|
+#        if check_prime? num
+#             p num
+#        end
 #     end
 # end
 
 # get_primes 100
 
-# This method can call on the previous check_prime? method.
-# Check out the documentation on Ruby's Prime class
 
-def get_primes num
-    (1..num).each do |num|
-       if check_prime? num
-            p num
-       end
+# # Reminders:
+
+# # A Prime number is a number that is not evenly divisible by another number except 1 and itself. To test whether a number is Prime, you only need to test as far as the square root of that number. This is advisable for optimization and testing large numbers.
+
+
+############################################################
+
+# Pandigital Numbers
+# A number of length n is 1-to-n pandigital if it makes use of all the digits 1 to n exactly once.
+
+# The number 15234 is 1-to-5 pandigital.
+
+# The number 333 is not 1-to-n pandigital.
+
+# The number 0 is not 1-to-n pandigital.
+
+# The number 10 is not 1-to-n pandigital.
+
+# The number 987654321 is 1-to-9 pandigital.
+
+# Write a method that takes an argument n and returns true if the number is 1-to-n pandigital, and false if it is not.
+
+def is_pandigital? num
+    pandigital = false
+    num = num.to_s
+    # p num
+    num_arr = num.split("")
+    # p num_arr
+    num_arr = num_arr.sort
+    # p num_arr
+    num_arr.each do |num| 
+        if num.to_i > 1 && num.to_i == (num_arr.index(num) + 1)
+            pandigital = true
+        end
+    end
+    if pandigital 
+        true
+    else
+        false
     end
 end
 
-get_primes 100
-
-
-# Reminders:
-
-# A Prime number is a number that is not evenly divisible by another number except 1 and itself. To test whether a number is Prime, you only need to test as far as the square root of that number. This is advisable for optimization and testing large numbers.
+p is_pandigital? 987654321
