@@ -235,39 +235,60 @@ require 'prime'
 
 ############################################################
 
-# Pandigital Numbers
-# A number of length n is 1-to-n pandigital if it makes use of all the digits 1 to n exactly once.
+# # Pandigital Numbers
+# # A number of length n is 1-to-n pandigital if it makes use of all the digits 1 to n exactly once.
 
-# The number 15234 is 1-to-5 pandigital.
+# # The number 15234 is 1-to-5 pandigital.
 
-# The number 333 is not 1-to-n pandigital.
+# # The number 333 is not 1-to-n pandigital.
 
-# The number 0 is not 1-to-n pandigital.
+# # The number 0 is not 1-to-n pandigital.
 
-# The number 10 is not 1-to-n pandigital.
+# # The number 10 is not 1-to-n pandigital.
 
-# The number 987654321 is 1-to-9 pandigital.
+# # The number 987654321 is 1-to-9 pandigital.
 
-# Write a method that takes an argument n and returns true if the number is 1-to-n pandigital, and false if it is not.
+# # Write a method that takes an argument n and returns true if the number is 1-to-n pandigital, and false if it is not.
 
-def is_pandigital? num
-    pandigital = false
-    num = num.to_s
-    # p num
-    num_arr = num.split("")
-    # p num_arr
-    num_arr = num_arr.sort
-    # p num_arr
-    num_arr.each do |num| 
-        if num.to_i > 1 && num.to_i == (num_arr.index(num) + 1)
-            pandigital = true
+# def is_pandigital? num
+#     pandigital = false
+#     num = num.to_s
+#     # p num
+#     num_arr = num.split("")
+#     # p num_arr
+#     num_arr = num_arr.sort
+#     # p num_arr
+#     num_arr.each do |num| 
+#         if num.to_i > 1 && num.to_i == (num_arr.index(num) + 1)
+#             pandigital = true
+#         end
+#     end
+#     if pandigital 
+#         true
+#     else
+#         false
+#     end
+# end
+
+# p is_pandigital? 987654321
+
+############################################################
+
+# Word Frequency
+# Write a method that will find the word that appears in a given sentence with the greatest frequency. If there is a tie, either of the words will do as a result.
+
+def word_frequency sentence
+    g_freq_word = ""
+    g_freq_word_count = 0
+    sentence_arr = sentence.split(" ")
+    sentence_arr.each do |word| 
+        if sentence_arr.count(word) > g_freq_word_count
+        g_freq_word_count = sentence_arr.count(word)
+        g_freq_word = word
         end
     end
-    if pandigital 
-        true
-    else
-        false
-    end
+    g_freq_word
 end
 
-p is_pandigital? 987654321
+p word_frequency "it was the best of times it was the worst of times it was the age of wisdom it was the age of foolishness"
+
