@@ -146,12 +146,16 @@ def black_jack_round
     end
 end
 
+@round_counter = 0
+
 def game_loop
     if @deck.length > 0
         p "This is Ruby Black Jack"
         p "(d)eal or (q)uit"
         answer = gets.chomp
         if answer == "d"
+            @round_counter += 1
+            p "This is Round #{@round_counter}"
             black_jack_round
         elsif answer == "q"
             p "The game has ended"
