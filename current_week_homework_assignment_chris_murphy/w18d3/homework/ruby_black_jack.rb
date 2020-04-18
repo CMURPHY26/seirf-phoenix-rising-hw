@@ -81,6 +81,14 @@ end
 #####Game Logic
 
 def compare_sum human, computer
+    p "Do you want to bet the (m)inimum $10 or (i)ncrease your bet?"
+    answer = gets.chomp
+    if answer == "m"
+        @bet = 10
+    elsif answer == "i"
+        p "How much do you want to bet?"
+        @bet = gets.chomp.to_i
+    end
     human_score = human.hand[0].value + human.hand[1].value
     computer_score = computer.hand[0].value + computer.hand[1].value
     p "#{human.name}'s score: #{human_score}"
@@ -89,30 +97,30 @@ def compare_sum human, computer
         if human_score == computer_score
             p "There is a tie!"
         elsif human_score == 21
-            human.bankroll += 10
-            computer.bankroll -= 10
+            human.bankroll += @bet
+            computer.bankroll -= @bet
             p "#{human.name} wins the round"
         elsif computer_score == 21
-            computer.bankroll += 10
-            human.bankroll -= 10
+            computer.bankroll += @bet
+            human.bankroll -= @bet
             p "#{computer.name} wins the round"
         elsif human_score > computer_score
-            human.bankroll += 10
-            computer.bankroll -= 10
+            human.bankroll += @bet
+            computer.bankroll -= @bet
             p "#{human.name} wins the round"
         elsif
             human_score < computer_score
-            computer.bankroll += 10
-            human.bankroll -= 10
+            computer.bankroll += @bet
+            human.bankroll -= @bet
             p "#{computer.name} wins the round"
         end
     elsif human_score > 21
-        computer.bankroll += 10
-        human.bankroll -= 10
+        computer.bankroll += @bet
+        human.bankroll -= @bet
         p "#{computer.name} wins the round"
     elsif computer_score > 21
-        human.bankroll += 10
-        computer.bankroll -= 10
+        human.bankroll += @bet
+        computer.bankroll -= @bet
         p "#{human.name} wins the round"
     end
         
@@ -149,9 +157,9 @@ end
 @round_counter = 0
 
 def game_loop
-    if @deck.length > 0
+    if @deck.length > 0 && @human_player.bankroll > 0
         p "This is Ruby Black Jack"
-        p "(d)eal or (q)uit"
+        p "(d)eal or (q)uit or check (b)ankroll"
         answer = gets.chomp
         if answer == "d"
             @round_counter += 1
@@ -159,9 +167,16 @@ def game_loop
             black_jack_round
         elsif answer == "q"
             p "The game has ended"
+        elsif answer == "b"
+            p "Player has $#{@human_player.bankroll}"
+            game_loop
         end
     elsif
-       p "No more cards. Game Over!"
+        if @deck.length == 0
+            p "No more cards. Game Over!"
+        elsif @human_player.bankroll == 0
+            p "You have $0 in your bank account. Game Over!"
+        end
     end
 end
 
