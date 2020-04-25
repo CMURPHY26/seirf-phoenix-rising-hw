@@ -1,5 +1,5 @@
 class AddDefaultValueToColumn < ActiveRecord::Migration[6.0]
   def change
-    change_column_default: :table, :column, 'default value'
+    change_column_default :tweets, :title, 'default value'
   end
 end
