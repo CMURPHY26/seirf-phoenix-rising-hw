@@ -1143,3 +1143,23 @@ Migrating to AddTweetIdToReviews (20200425204225)
   [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "author", "created_at", "updated_at", "tweet_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "test content2"], ["author", "test author2"], ["created_at", "2020-04-25 20:52:43.628016"], ["updated_at", "2020-04-25 20:52:43.628016"], ["tweet_id", 1]]
   [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."tweet_id" = $1[0m  [["tweet_id", 1]]
+Started GET "/tweets" for ::1 at 2020-04-25 16:57:16 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (1.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 36ms (Views: 22.7ms | ActiveRecord: 6.8ms | Allocations: 19792)
+
+
+Started GET "/tweets/1" for ::1 at 2020-04-25 16:57:19 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:9:in `show'
+  [1m[36mCACHE Tweet Load (0.0ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:10:in `show'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."tweet_id" = $1[0m  [["tweet_id", 1]]
+  ↳ app/controllers/tweets_controller.rb:11:in `show'
+Completed 200 OK in 33ms (Views: 11.7ms | ActiveRecord: 6.2ms | Allocations: 8742)
+
+
