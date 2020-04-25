@@ -705,3 +705,100 @@ Processing by TweetsController#show as HTML
 Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 743)
 
 
+Started GET "/tweets/" for ::1 at 2020-04-25 16:11:15 -0400
+Processing by TweetsController#index as */*
+  Parameters: {"book"=>{"genre"=>"Fiction"}}
+  [1m[36mTweet Load (1.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 22ms (Views: 16.5ms | ActiveRecord: 1.3ms | Allocations: 18657)
+
+
+Started GET "/tweets/1" for ::1 at 2020-04-25 16:11:18 -0400
+Processing by TweetsController#show as */*
+  Parameters: {"book"=>{"genre"=>"Fiction"}, "id"=>"1"}
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 859)
+
+
+Started GET "/tweets" for ::1 at 2020-04-25 16:11:23 -0400
+Processing by TweetsController#index as */*
+  Parameters: {"book"=>{"genre"=>"Fiction"}}
+  [1m[36mTweet Load (2.7ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 2.7ms | Allocations: 14575)
+
+
+Started POST "/tweets" for ::1 at 2020-04-25 16:11:59 -0400
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"Chris", "content"=>"", "author"=>""}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1288)
+
+
+  
+TypeError (no implicit conversion of Symbol into String):
+  
+app/controllers/tweets_controller.rb:25:in `tweet_params'
+app/controllers/tweets_controller.rb:14:in `create'
+Started POST "/tweets" for ::1 at 2020-04-25 16:12:24 -0400
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"test title", "content"=>"test content", "author"=>"Chris"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 115)
+
+
+  
+TypeError (no implicit conversion of Symbol into String):
+  
+app/controllers/tweets_controller.rb:25:in `tweet_params'
+app/controllers/tweets_controller.rb:14:in `create'
+Started POST "/tweets" for ::1 at 2020-04-25 16:12:49 -0400
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"test title", "content"=>"test content", "author"=>"Chris"}}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 585)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: tweets):
+  
+app/controllers/tweets_controller.rb:25:in `tweet_params'
+app/controllers/tweets_controller.rb:14:in `create'
+Started POST "/tweets" for ::1 at 2020-04-25 16:13:14 -0400
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"test title", "content"=>"test content", "author"=>"Chris"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:15:in `create'
+  [1m[36mTweet Create (0.9ms)[0m  [1m[32mINSERT INTO "tweets" ("title", "content", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test title"], ["content", "test content"], ["author", "Chris"], ["created_at", "2020-04-25 20:13:14.528163"], ["updated_at", "2020-04-25 20:13:14.528163"]]
+  ↳ app/controllers/tweets_controller.rb:15:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:15:in `create'
+Completed 201 Created in 23ms (Views: 0.3ms | ActiveRecord: 13.6ms | Allocations: 6693)
+
+
+Started POST "/tweets" for ::1 at 2020-04-25 16:13:22 -0400
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"test title"}}
+Completed 500 Internal Server Error in 292ms (ActiveRecord: 0.0ms | Allocations: 253482)
+
+
+  
+NameError (undefined local variable or method `song' for #<TweetsController:0x00007fe6ffd8b6f0>):
+  
+app/controllers/tweets_controller.rb:18:in `create'
+Started POST "/tweets" for ::1 at 2020-04-25 16:13:57 -0400
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"test title"}}
+Completed 422 Unprocessable Entity in 16ms (Views: 0.3ms | ActiveRecord: 7.4ms | Allocations: 5222)
+
+
+Started POST "/tweets" for ::1 at 2020-04-25 16:14:49 -0400
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"Crentist", "content"=>"test contentMy dentist's name is Crentist, maybe that's why he became a dentist", "author"=>"Dwight"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:15:in `create'
+  [1m[36mTweet Create (4.8ms)[0m  [1m[32mINSERT INTO "tweets" ("title", "content", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Crentist"], ["content", "test contentMy dentist's name is Crentist, maybe that's why he became a dentist"], ["author", "Dwight"], ["created_at", "2020-04-25 20:14:49.799223"], ["updated_at", "2020-04-25 20:14:49.799223"]]
+  ↳ app/controllers/tweets_controller.rb:15:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:15:in `create'
+Completed 201 Created in 9ms (Views: 0.3ms | ActiveRecord: 5.3ms | Allocations: 2355)
+
+
