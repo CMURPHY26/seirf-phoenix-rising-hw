@@ -19,6 +19,16 @@ class TweetsController < ApplicationController
         end
     end
 
+    def update
+        tweet = Tweet.find(params[:id])
+        tweet.update(tweet_params)
+        if tweet.save
+            render status: 200, json: {tweet:tweet}
+        else
+            render status: 422, json: {tweet: tweet}
+        end
+    end
+
     private
 
     def tweet_params

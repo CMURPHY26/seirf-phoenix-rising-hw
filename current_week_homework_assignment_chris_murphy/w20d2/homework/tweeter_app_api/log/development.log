@@ -802,3 +802,31 @@ Processing by TweetsController#create as */*
 Completed 201 Created in 9ms (Views: 0.3ms | ActiveRecord: 5.3ms | Allocations: 2355)
 
 
+Started PUT "/tweets/101" for ::1 at 2020-04-25 16:18:17 -0400
+Processing by TweetsController#update as */*
+  Parameters: {"tweet"=>{"title"=>"Dentist 1", "content"=>"test content - My dentist's name is Crentist, maybe that's why he became a dentist"}, "id"=>"101"}
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:23:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:24:in `update'
+  [1m[36mTweet Update (0.4ms)[0m  [1m[33mUPDATE "tweets" SET "title" = $1, "content" = $2, "updated_at" = $3 WHERE "tweets"."id" = $4[0m  [["title", "Dentist 1"], ["content", "test content - My dentist's name is Crentist, maybe that's why he became a dentist"], ["updated_at", "2020-04-25 20:18:17.333796"], ["id", 101]]
+  ↳ app/controllers/tweets_controller.rb:24:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:24:in `update'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 6.4ms | Allocations: 7266)
+
+
+Started PUT "/tweets/101" for ::1 at 2020-04-25 16:18:24 -0400
+Processing by TweetsController#update as */*
+  Parameters: {"tweet"=>{"author"=>"Christopher"}, "id"=>"101"}
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:23:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:24:in `update'
+  [1m[36mTweet Update (0.6ms)[0m  [1m[33mUPDATE "tweets" SET "author" = $1, "updated_at" = $2 WHERE "tweets"."id" = $3[0m  [["author", "Christopher"], ["updated_at", "2020-04-25 20:18:24.914702"], ["id", 101]]
+  ↳ app/controllers/tweets_controller.rb:24:in `update'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:24:in `update'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 2945)
+
+
