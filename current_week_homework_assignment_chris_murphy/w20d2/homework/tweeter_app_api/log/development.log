@@ -830,3 +830,17 @@ Processing by TweetsController#update as */*
 Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 2945)
 
 
+Started DELETE "/tweets/101" for ::1 at 2020-04-25 16:22:37 -0400
+Processing by TweetsController#destroy as */*
+  Parameters: {"id"=>"101", "tweet"=>{}}
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:33:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:33:in `destroy'
+  [1m[36mTweet Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tweets" WHERE "tweets"."id" = $1[0m  [["id", 101]]
+  ↳ app/controllers/tweets_controller.rb:33:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:33:in `destroy'
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 7.6ms | Allocations: 5672)
+
+
