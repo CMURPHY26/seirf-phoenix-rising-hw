@@ -217,3 +217,17 @@ Processing by UsersController#show as */*
 Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 742)
 
 
+Started GET "/users" for ::1 at 2020-05-03 18:35:37 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 12.9ms | ActiveRecord: 5.4ms | Allocations: 3266)
+
+
+Started GET "/users" for ::1 at 2020-05-03 18:36:58 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.4ms | Allocations: 3177)
+
+
