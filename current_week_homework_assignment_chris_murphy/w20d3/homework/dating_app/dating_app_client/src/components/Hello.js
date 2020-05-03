@@ -4,7 +4,7 @@ import React, {Component} from 'react'
 class Daters extends Component {
 
     getDaters = () => {
-        fetch("http://localhost:3000/users")
+        fetch("/users")
         .then(response => response.json())
         .then(jData => console.log(jData))
         .catch(err => console.log(err))
