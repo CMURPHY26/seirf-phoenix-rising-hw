@@ -1,0 +1,219 @@
+  [1m[35m (202.0ms)[0m  [1m[35mCREATE DATABASE "dating_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (81.4ms)[0m  [1m[35mCREATE DATABASE "dating_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (47.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1722971123778292395)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200503215551)
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "starsign" character varying, "age" integer, "img" character varying, "ltl" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (3.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200503215551"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-03 21:56:39.436240"], ["updated_at", "2020-05-03 21:56:39.436240"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1722971123778292395)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ryan Gosling"], ["starsign", "Scorpio"], ["age", 35], ["img", "http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.524470"], ["updated_at", "2020-05-03 21:57:03.524470"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", " Hypatia of Alexandria  "], ["starsign", "Aries"], ["age", 1700], ["img", "http://static1.squarespace.com/static/53e031f1e4b088c3aac80e47/t/5636ebf1e4b0683b6c56cb43/1446440030277/hypatia.jpg"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.530229"], ["updated_at", "2020-05-03 21:57:03.530229"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Hogan"], ["starsign", "Libra"], ["age", 40], ["img", "http://myfivebest.com/wp-content/uploads/2010/10/crime_crane.jpg"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.532880"], ["updated_at", "2020-05-03 21:57:03.532880"]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lumpy Space Princess"], ["starsign", "Virgo"], ["age", 29], ["img", "http://i0.wp.com/www.drawcentral.com/wp-content/uploads/2013/03/Lumpy-Space-Princess.jpg?resize=150%2C150"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.535486"], ["updated_at", "2020-05-03 21:57:03.535486"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Idris Elba"], ["starsign", "Virgo"], ["age", 43], ["img", "http://www.ramascreen.com/wp-content/uploads/2015/01/Idris-Elba-Luther-150x150.jpg"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.538272"], ["updated_at", "2020-05-03 21:57:03.538272"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Trash Heap of Fraggle Rock"], ["starsign", "Taurus"], ["age", 1000], ["img", "http://www.toughpigs.com/wp-content/uploads/2009/12/trasheap-150x150.jpg"], ["ltl", false], ["created_at", "2020-05-03 21:57:03.541189"], ["updated_at", "2020-05-03 21:57:03.541189"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Guy Guy"], ["starsign", "Gemni"], ["age", 60], ["img", "https://s-media-cache-ak0.pinimg.com/236x/03/d1/53/03d153c14b49a88cab97d58a5bedb6e8.jpg"], ["ltl", false], ["created_at", "2020-05-03 21:57:03.544529"], ["updated_at", "2020-05-03 21:57:03.544529"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Raisin"], ["starsign", "Gemni"], ["age", 20], ["img", "http://cdn.lifeinthefastlane.com/wp-content/uploads/2010/09/raisin.jpg"], ["ltl", false], ["created_at", "2020-05-03 21:57:03.547437"], ["updated_at", "2020-05-03 21:57:03.547437"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jim"], ["starsign", "Leo"], ["age", 49], ["img", "http://www.argylejournal.com/wp-content/uploads/2012/10/Jim-Ellinghausen-e1349993531939-150x150.jpg"], ["ltl", false], ["created_at", "2020-05-03 21:57:03.550126"], ["updated_at", "2020-05-03 21:57:03.550126"]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Muttley"], ["starsign", "Capricorn"], ["age", 2], ["img", "http://gifrific.com/wp-content/uploads/2012/08/Cartoon-Character-Mutley-Laughing-150x150.gif"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.552775"], ["updated_at", "2020-05-03 21:57:03.552775"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Slimer"], ["starsign", "Pisces"], ["age", 90], ["img", "http://orig13.deviantart.net/ef48/f/2014/309/1/5/slimer_by_bbjeg-d85exys.png"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.555639"], ["updated_at", "2020-05-03 21:57:03.555639"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Mist"], ["starsign", "Aquarius"], ["age", 340000], ["img", "http://www.kidthesaurus.com/wp-content/uploads/2015/07/mist-150x150.jpg"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.558375"], ["updated_at", "2020-05-03 21:57:03.558375"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ching Shih"], ["starsign", "Sagittarius"], ["age", 340000], ["img", "http://treehouseletter.com/wp-content/uploads/2015/04/Ching-Shih-150x150.jpg"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.561121"], ["updated_at", "2020-05-03 21:57:03.561121"]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Galadriel"], ["starsign", "Sagittarius"], ["age", 7045], ["img", "http://nerdbastards.com/wp-content/uploads/2015/12/Galadriel-and-Phial-150x150.jpg"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.563669"], ["updated_at", "2020-05-03 21:57:03.563669"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Skeletor"], ["starsign", "Cancer"], ["age", 19], ["img", "http://www.shwiggie.com/media/images/skeletor-smirk.jpg"], ["ltl", true], ["created_at", "2020-05-03 21:57:03.566546"], ["updated_at", "2020-05-03 21:57:03.566546"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sauron"], ["starsign", "Taurus"], ["age", 198], ["img", "http://ia.media-imdb.com/images/M/MV5BMTc0Njk5NDQwNl5BMl5BanBnXkFtZTYwNTU3NTky._V1_SX150_CR0,0,150,150_.jpg"], ["ltl", false], ["created_at", "2020-05-03 21:57:03.569122"], ["updated_at", "2020-05-03 21:57:03.569122"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-05-03 17:57:19 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.2ms | Allocations: 478)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 2621)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-05-03 17:57:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-05-03 17:57:24 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 34ms (Views: 22.6ms | ActiveRecord: 9.1ms | Allocations: 9058)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Started POST "/users/" for ::1 at 2020-05-03 18:02:10 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Homer", "starsign"=>"Gemini", "age"=>"32", "img"=>"http://www.shwiggie.com/media/images/skeletor-smirk.jpg", "ltl"=>"true"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Homer"], ["starsign", "Gemini"], ["age", 32], ["img", "http://www.shwiggie.com/media/images/skeletor-smirk.jpg"], ["ltl", true], ["created_at", "2020-05-03 22:02:10.371211"], ["updated_at", "2020-05-03 22:02:10.371211"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 6ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 2705)
+
+
+Started PUT "/users/" for ::1 at 2020-05-03 18:02:24 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/users"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/17" for ::1 at 2020-05-03 18:02:38 -0400
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"Homer", "starsign"=>"Gemini", "age"=>"33", "img"=>"http://www.shwiggie.com/media/images/skeletor-smirk.jpg", "ltl"=>"true"}, "id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1191)
+
+
+Started PUT "/users/17" for ::1 at 2020-05-03 18:02:44 -0400
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"Homer", "starsign"=>"Gemini", "age"=>"33", "img"=>"http://www.shwiggie.com/media/images/skeletor-smirk.jpg", "ltl"=>"true"}, "id"=>"17"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mUser Update (4.9ms)[0m  [1m[33mUPDATE "users" SET "age" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["age", 33], ["updated_at", "2020-05-03 22:02:44.353884"], ["id", 17]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:29:in `update'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 7.2ms | Allocations: 2974)
+
+
+Started DELETE "/users/17" for ::1 at 2020-05-03 18:02:50 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"Homer", "starsign"=>"Gemini", "age"=>"33", "img"=>"http://www.shwiggie.com/media/images/skeletor-smirk.jpg", "ltl"=>"true"}, "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+Completed 204 No Content in 13ms (ActiveRecord: 1.4ms | Allocations: 2228)
+
+
+Started DELETE "/users/17" for ::1 at 2020-05-03 18:03:00 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms | Allocations: 606)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=17):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/users/17" for ::1 at 2020-05-03 18:03:04 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms | Allocations: 600)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=17):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/users/16" for ::1 at 2020-05-03 18:03:08 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 742)
+
+
